@@ -1,6 +1,6 @@
 # Grupa 7 - TRIJUMVIRAT
 ## Tema: Studentska banka 
-Članovi Tima:**
+Članovi Tima:
 
 1. Malkoč Ahmed
 2. Mešić Ferhad
@@ -51,7 +51,7 @@ Aplikacija BankaStudent ima za cilj da organizuje, nadgleda, pomaže, upućuje i
 
  * Uspjeh na fakultetu donosi i određene povlastice. Bolji rezultati znače manje kamate, a lošiji veće, s tim da neko može da i ne zadovoljava uslove za dobijanje mikrokredita. Da bi se dobio mikrokredit, mora postojati određeno pokriće, odnosno da je student u određenom radnom odnosu. 
 
-#### Koverter valuta
+#### Konverter valuta
  * Aplikacija nudi i dodatnu mogućnost, a to je da korisnik pretvori novac iz jedne valute u drugu. Pretvaranje je čisto informativno, odnosno ne veže se za pravi novac nego služi samo da pretvori određeni iznos u neku od najčešće korištenih valuta.
 
 
