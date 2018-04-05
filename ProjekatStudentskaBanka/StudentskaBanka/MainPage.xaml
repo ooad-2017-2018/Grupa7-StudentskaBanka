@@ -7,44 +7,52 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <ScrollViewer HorizontalScrollBarVisibility="auto" VerticalScrollBarVisibility="Auto">
     <Grid Background="Blue">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
-        </Grid.RowDefinitions>
+        <RelativePanel HorizontalAlignment="Center">
+            <TextBlock Name="Naslov" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,60,0,60" Text="Registracija" TextWrapping="Wrap" Foreground="LimeGreen" FontSize="30"/>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="50"/>
-        </Grid.ColumnDefinitions>
+            <TextBlock Name="Ime" RelativePanel.Below="Naslov" HorizontalAlignment="Left" Margin="60,0,0,0" Height="20" Text="Ime" TextWrapping="Wrap" Width="62" Foreground="White"/>
+            <TextBox Name="Ime2" RelativePanel.RightOf="Ime" RelativePanel.AlignVerticalCenterWith="Ime" Width="250" Margin="60,0,0,0"/>
+
+            <TextBlock Name="Prezime" RelativePanel.Below="Ime" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Prezime" TextWrapping="Wrap" Width="62" Foreground="White"/>
+            <TextBox Name="Prezime2" RelativePanel.RightOf="Ime" RelativePanel.AlignVerticalCenterWith="Prezime" Width="250" Margin="60,50,0,0"/>
+            
+            <TextBlock Name="Jmbg" RelativePanel.Below="Prezime" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="JMBG" TextWrapping="Wrap" Width="62" Foreground="White"/>
+            <TextBox Name="Jmbg2" RelativePanel.RightOf="Jmbg" RelativePanel.AlignVerticalCenterWith="Jmbg" Width="250" Margin="60,50,0,0"/>
+
+            <TextBlock Name="Spol" RelativePanel.Below="Jmbg" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Spol" TextWrapping="Wrap" Width="62" Foreground="White"/>
+                <RadioButton Name="Zensko" RelativePanel.RightOf="Spol" RelativePanel.AlignVerticalCenterWith="Spol" Margin="60,50,0,0" RelativePanel.Below="Jmbg2" Foreground="White" FontSize="12" Click="WriteText">Zensko</RadioButton>
+                <RadioButton Name="Musko" RelativePanel.RightOf="Spol" Margin="60,10,0,0" RelativePanel.Below="Zensko" FontSize="12" Foreground="White" Click="WriteText">Musko</RadioButton>
+                <RadioButton Name="Drugo" RelativePanel.RightOf="Spol" Margin="60,10,0,0" RelativePanel.Below="Musko" FontSize="12" Foreground="White" Click="WriteText">Drugo</RadioButton>
+
+            <TextBlock Name="Adresa" RelativePanel.Below="Drugo" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Adresa" TextWrapping="Wrap" Width="62" Foreground="White"/>
+            <TextBox Name="Adresa2" RelativePanel.RightOf="Adresa" RelativePanel.AlignVerticalCenterWith="Adresa" Width="250" Margin="60,50,0,0"/>
+
+            <TextBlock Name="BrTef" RelativePanel.Below="Adresa" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Broj telefona" TextWrapping="Wrap" Width="90" Foreground="White"/>
+            <TextBox Name="BrTef2" RelativePanel.RightOf="BrTef" RelativePanel.AlignLeftWith="Adresa2" RelativePanel.AlignVerticalCenterWith="BrTef" Width="250" Margin="60,50,0,0"/>
+
+            <TextBlock Name="Email" RelativePanel.Below="BrTef" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Email" TextWrapping="Wrap" Width="90" Foreground="White"/>
+            <TextBox Name="Email2" RelativePanel.RightOf="Email" RelativePanel.AlignLeftWith="Adresa2" RelativePanel.AlignVerticalCenterWith="Email" Width="250" Margin="60,50,0,0"/>
+
+            <TextBlock Name="PonEmail" RelativePanel.Below="Email" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Ponovite email" TextWrapping="Wrap" Width="110" Foreground="White"/>
+            <TextBox Name="PonEmail2" RelativePanel.RightOf="PonEmail" RelativePanel.AlignLeftWith="Adresa2" RelativePanel.AlignVerticalCenterWith="PonEmail" Width="250" Margin="60,50,0,0"/>
+
+                <TextBlock Name="Sifra" RelativePanel.Below="PonEmail" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Sifra" TextWrapping="Wrap" Width="90" Foreground="White"/>
+            <PasswordBox Name="Sifra2" RelativePanel.RightOf="Sifra" RelativePanel.AlignLeftWith="Adresa2" RelativePanel.AlignVerticalCenterWith="Sifra" Width="250" Margin="60,50,0,0"/>
+
+            <TextBlock Name="PonSifru" RelativePanel.Below="Sifra" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Ponovite sifru" TextWrapping="Wrap" Width="110" Foreground="White"/>
+            <PasswordBox Name="PonSifru2" RelativePanel.RightOf="PonSifru" RelativePanel.AlignLeftWith="Adresa2" RelativePanel.AlignVerticalCenterWith="PonSifru" Width="250" Margin="60,50,0,0"/>
+
+            <TextBlock Name="Provjera" RelativePanel.Below="PonSifru" HorizontalAlignment="Left" Margin="60,50,0,0" Height="20" Text="Provjerite sve podatke i cekirajte kvadratic " TextWrapping="Wrap" Width="330" Foreground="White"/>
+            <CheckBox  RelativePanel.RightOf="Provjera" RelativePanel.AlignVerticalCenterWith="Provjera" Margin="10,50,0,0"/>
+
+                <Button RelativePanel.Below="Provjera" HorizontalAlignment="Left" Margin="60,50,0,50" Content="Registruj me" Foreground="LimeGreen" FontSize="20"></Button>
 
 
 
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="220" Margin="163,253,0,0" VerticalAlignment="Top" Width="378" RenderTransformOrigin="0.433,-1.113" Grid.Row="1" Source="Assets/tsb_logo.jpg"/>
 
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="127,478,0,0" Grid.Row="1" TextWrapping="Wrap" Text="The Student Bank - You are richer than you think" VerticalAlignment="Top" RenderTransformOrigin="0.742,5.1" Height="46" Width="450"
-                   FontFamily="Segoe UI" FontStyle="Normal" FontWeight="Light" IsColorFontEnabled="True" Foreground="White" FontSize="19" TextAlignment="Center"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="646,220,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Dobrodošli na službenu aplikaciju banke Student!" VerticalAlignment="Top" Height="56" Width="744"
-                   FontFamily="Segoe UI" FontStyle="Normal" FontWeight="Light" FontSize="35" Foreground="White" TextAlignment="Center"/>
-
-        <Button Grid.Column="1" Content="Login" HorizontalAlignment="Left" Margin="890,325,0,0" Grid.Row="1" VerticalAlignment="Top" Width="245" RenderTransformOrigin="0.636,1.344" Height="60"
-                Background="LightGoldenrodYellow" FontFamily="Segoe MDL2" Foreground="Blue" FontSize="20"/>
-
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="828,413,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Niste registrovani?" VerticalAlignment="Top" Height="33" Width="170"
-                   FontFamily="Segoe UI" TextAlignment="Center" FontSize="20" FontWeight="Light" Foreground="LightGoldenrodYellow"
-                   />
-        <HyperlinkButton Grid.Column="1"  Content="Kliknite ovdje za registraciju" HorizontalAlignment="Left" Margin="1003,407,0,0" Grid.Row="1" VerticalAlignment="Top" Width="248"
-                         FontFamily="Segoe UI" FontSize="20" FontWeight="Light" Foreground="LightGoldenrodYellow" RenderTransformOrigin="0.492,0.333"/>
-
-
-
-
-
-
-
-
-
+            </RelativePanel>
     </Grid>
+    </ScrollViewer>
 </Page>
