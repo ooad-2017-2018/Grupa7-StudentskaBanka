@@ -8,17 +8,17 @@
     mc:Ignorable="d">
 
     <Grid Background="Blue">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Foreground="White" Text="Šifra Transakcije: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="20,50,0,0" TextWrapping="Wrap" Foreground="White" Text="Vrsta Transakcije: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
-        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="20,80,0,0" TextWrapping="Wrap" Foreground="White" Text="Primalac:" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
-        <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="20,110,0,0" TextWrapping="Wrap"  Foreground="White" Text="Datum: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
-        <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="20,140,0,0" TextWrapping="Wrap" Foreground="White" Text="Iznos: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
+        <TextBlock x:Name="textBlock_sifra" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Foreground="White" Text="Šifra Transakcije: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
+        <TextBlock x:Name="textBlock_vrsta" HorizontalAlignment="Left" Margin="20,50,0,0" TextWrapping="Wrap" Foreground="White" Text="Vrsta Transakcije: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
+        <TextBlock x:Name="textBlock_primalac" HorizontalAlignment="Left" Margin="20,80,0,0" TextWrapping="Wrap" Foreground="White" Text="Primalac:" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
+        <TextBlock x:Name="textBlock_datum" HorizontalAlignment="Left" Margin="20,110,0,0" TextWrapping="Wrap"  Foreground="White" Text="Datum: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
+        <TextBlock x:Name="textBlock_iznos" HorizontalAlignment="Left" Margin="20,140,0,0" TextWrapping="Wrap" Foreground="White" Text="Iznos: " VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
         <TextBlock x:Name="textBlock_ID"  Margin="0,20,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
         <TextBlock x:Name="textBlock_type" Margin="0,50,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
-        <TextBlock x:Name="textBlock_fromAccount" HorizontalAlignment="Right" Margin="0,80,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
-        <TextBlock x:Name="textBlock_toAccount" Margin="0,110,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
+        <TextBlock x:Name="textBlock_toAccount" HorizontalAlignment="Right" Margin="0,80,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
+        <TextBlock x:Name="textBlock_date" Margin="0,110,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
         <TextBlock x:Name="textBlock_amount" HorizontalAlignment="Right" Margin="0,140,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
         <Button x:Name="button_ponisti" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Poništi transakciju" VerticalAlignment="Top" Margin="10,174,10,0" Height="55" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
-        <Button x:Name="button_back" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Nazad" VerticalAlignment="Top" Margin="10,235,10,0" Height="55" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
+        <Button x:Name="button_nazad" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Nazad" VerticalAlignment="Top" Margin="10,235,10,0" Height="55" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
         </Grid>
 </Page>
