@@ -5,9 +5,9 @@
     xmlns:local="using:StudentskaBanka"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Height="932" Width="1416">
 
-    <Grid Background="Blue" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" RenderTransformOrigin="0.897,0.678" Margin="0,0,10,10">
+    <Grid Background="Blue" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" RenderTransformOrigin="0.835,0.711" Margin="0,0,10,10">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="Phone">
@@ -125,7 +125,7 @@
                         <Setter Target="bankLogo.VerticalAlignment" Value="Top"/>
                         <Setter Target="bankLogo.RenderTransformOrigin" Value="0.433,-1.113"/>
                         <Setter Target="bankLogo.Source" Value="Assets/tsb_logo.jpg"/>
-                        
+
 
                         <Setter Target="textBlockSlogan.Margin" Value="127,478,0,0"/>
                         <Setter Target="textBlockSlogan.Height" Value="46"/>
@@ -197,6 +197,7 @@
                         <Setter Target="hypelinkRegistracija.FontSize" Value="20"/>
                         <Setter Target="hypelinkRegistracija.RenderTransformOrigin" Value="0.492,0.333"/>
 
+
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -204,10 +205,13 @@
 
         <Image x:Name="bankLogo"/>
         <TextBlock x:Name="textBlockSlogan"/>
-        <TextBlock x:Name="textBlockDobrodosli"/>
-        <Button x:Name="buttonLogin"/>
-        <TextBlock x:Name="textBlockPitanje" Margin="600,335,0,0" RenderTransformOrigin="-1.313,-1.939"/>
-        <HyperlinkButton x:Name="hypelinkRegistracija"/>
+        <TextBlock x:Name="textBlockDobrodosli" Margin="450,904,0,-234"/>
+        <Button x:Name="buttonLogin" Margin="580,974,0,-324"/>
+        <TextBlock x:Name="textBlockPitanje" Margin="530,1044,0,-367" RenderTransformOrigin="-1.313,-1.939"/>
+        <HyperlinkButton x:Name="hypelinkRegistracija" Margin="700,1037,0,-366"/>
+        
+
+
 
     </Grid>
 </Page>
