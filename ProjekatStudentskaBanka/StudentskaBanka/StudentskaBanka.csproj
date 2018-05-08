@@ -95,6 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfilKlijenta.xaml.cs">
+      <DependentUpon>ProfilKlijenta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KonvertorValuta.xaml.cs">
       <DependentUpon>KonvertorValuta.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ProfilKlijenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KonvertorValuta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -5,7 +5,7 @@
     xmlns:local="using:StudentskaBanka"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Height="932" Width="1416">
+    mc:Ignorable="d">
 
     <Grid Background="Blue" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" RenderTransformOrigin="0.835,0.711" Margin="0,0,10,10">
         <VisualStateManager.VisualStateGroups>
@@ -15,10 +15,6 @@
                         <AdaptiveTrigger MinWindowWidth="0"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-
-                        <Setter Target="bankLogo.Margin" Value="100,100,0,0"/>
-                        <Setter Target="bankLogo.Height" Value="10"/>
-                        <Setter Target="bankLogo.Width" Value="10"/>
 
                     </VisualState.Setters>
                 </VisualState>
