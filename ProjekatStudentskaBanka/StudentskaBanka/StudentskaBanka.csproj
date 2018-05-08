@@ -98,6 +98,9 @@
     <Compile Include="KonvertorValuta.xaml.cs">
       <DependentUpon>KonvertorValuta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PonistavanjeTransakcije.xaml.cs">
       <DependentUpon>PonistavanjeTransakcije.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="KonvertorValuta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

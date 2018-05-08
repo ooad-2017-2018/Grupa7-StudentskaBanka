@@ -19,7 +19,6 @@
             Text="Konvertor valuta"
             TextWrapping="Wrap" 
             FontFamily="Segoe UI" 
-            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" 
             TextAlignment="Center"
             VerticalAlignment="Center"
             Foreground="White"/>
@@ -29,10 +28,9 @@
             Margin="0,0,0,3"
             VerticalAlignment="Bottom"
             BorderBrush="LightGoldenrodYellow"
-            BorderThickness="3" 
-            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+            BorderThickness="3" />
 
-        
+
 
         <TextBlock
             x:Name="textBlockIznos"
@@ -88,8 +86,7 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
             Content="Izvrši konverziju" 
-            Height="45" 
-            d:LayoutOverrides="LeftMargin, RightMargin" 
+            Height="45"  
             FontSize="20"
             Background="LightGoldenrodYellow"
             Foreground="Blue"/>
@@ -102,7 +99,7 @@
                 Grid.Row="1" 
                 VerticalAlignment="Top" 
                 Width="307">
-            <RadioButton x:Name="radioButton_Copy1"  
+            <RadioButton x:Name="radioButtonDolar"  
                          GroupName="Group1" 
                          Content="Dolar ($)" 
                          HorizontalAlignment="Left" 
@@ -114,7 +111,7 @@
            
         </Border>
 
-        <RadioButton x:Name="radioButton" 
+        <RadioButton x:Name="radioButtonEuro" 
                      GroupName="Group1" 
                      Content="Euro (€)" 
                      HorizontalAlignment="Left" 

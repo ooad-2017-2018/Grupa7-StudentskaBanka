@@ -18,7 +18,7 @@
         <TextBlock x:Name="textBlock_toAccount" HorizontalAlignment="Right" Margin="0,80,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
         <TextBlock x:Name="textBlock_date" Margin="0,110,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
         <TextBlock x:Name="textBlock_amount" HorizontalAlignment="Right" Margin="0,140,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
-        <Button x:Name="button_ponisti" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Poništi transakciju" VerticalAlignment="Top" Margin="10,174,10,0" Height="55" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
-        <Button x:Name="button_nazad" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Nazad" VerticalAlignment="Top" Margin="10,235,10,0" Height="55" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
+        <Button x:Name="button_ponisti" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Poništi transakciju" VerticalAlignment="Top" Margin="10,174,10,0" Height="55" HorizontalAlignment="Stretch" />
+        <Button x:Name="button_nazad" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Nazad" VerticalAlignment="Top" Margin="10,235,10,0" Height="55" HorizontalAlignment="Stretch" />
         </Grid>
 </Page>
