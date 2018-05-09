@@ -117,7 +117,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
 	<Compile Include="Views\Registracija.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+      <DependentUpon>Registracija.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
