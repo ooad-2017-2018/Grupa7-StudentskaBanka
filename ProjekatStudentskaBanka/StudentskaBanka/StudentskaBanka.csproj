@@ -95,19 +95,25 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProfilKlijenta.xaml.cs">
+    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Kredit.cs" />
+    <Compile Include="Models\Moderator.cs" />
+    <Compile Include="Models\Racun.cs" />
+    <Compile Include="Models\StudentskaBanka.cs" />
+    <Compile Include="Models\Transakcija.cs" />
+    <Compile Include="Views\ProfilKlijenta.xaml.cs">
       <DependentUpon>ProfilKlijenta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KonvertorValuta.xaml.cs">
+    <Compile Include="Views\KonvertorValuta.xaml.cs">
       <DependentUpon>KonvertorValuta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PonistavanjeTransakcije.xaml.cs">
+    <Compile Include="Views\PonistavanjeTransakcije.xaml.cs">
       <DependentUpon>PonistavanjeTransakcije.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,23 +140,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="ProfilKlijenta.xaml">
+    <Page Include="Views\ProfilKlijenta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="KonvertorValuta.xaml">
+    <Page Include="Views\KonvertorValuta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PonistavanjeTransakcije.xaml">
+    <Page Include="Views\PonistavanjeTransakcije.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
