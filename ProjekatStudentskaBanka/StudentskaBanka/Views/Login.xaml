@@ -20,7 +20,6 @@
             Text="LOGIN"
             TextWrapping="Wrap" 
             FontFamily="Microsoft JhengHei Light" 
-            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" 
             TextAlignment="Center"
             VerticalAlignment="Center"
             Foreground="White"/>
@@ -32,8 +31,7 @@
             Text="Upišite pristupne podatke!"
             TextWrapping="Wrap" 
             Height="20" 
-            FontFamily="Microsoft JhengHei Light" 
-            d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" 
+            FontFamily="Microsoft JhengHei Light"  
             TextAlignment="Center"
             Foreground="White"/>
 
@@ -43,15 +41,14 @@
             Margin="0,0,0,3"
             VerticalAlignment="Bottom"
             BorderBrush="White"
-            BorderThickness="3" 
-            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+            BorderThickness="3" />
 
         <TextBlock
             x:Name="textBlockKorisnickoIme"
             Grid.Row="1"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
-            Margin="30,50,144,0"
+            Margin="30,30,144,0"
             Text="Korisničko ime:"
             TextWrapping="Wrap"  
             FontFamily="Segoe UI" 
@@ -61,46 +58,42 @@
         <TextBox
             x:Name="textBoxKorisnickoIme"
             Grid.Row="1"
-            Margin="30,100,24,0"
+            Margin="30,80,24,0"
             VerticalAlignment="Top"
             TextWrapping="Wrap" 
             Height="50" 
-            Background="White"
-            d:LayoutOverrides="LeftMargin, RightMargin" />
+            Background="White"/>
 
         <TextBlock
             x:Name="textBlockSifra"
             Grid.Row="1"
-            Margin="29,200,0,0"
+            Margin="29,170,0,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             Text="Password:"
             TextWrapping="Wrap" 
             Foreground="White"
             FontFamily="Segoe UI" 
-            FontSize="20" 
-            d:LayoutOverrides="TopPosition, BottomPosition" />
+            FontSize="20" />
 
         <TextBox
             x:Name="textBoxSifra"
             Grid.Row="1"
             VerticalAlignment="Top"
-            Margin="28,250,24,217"
+            Margin="28,220,24,217"
             Background="White" 
             TextWrapping="Wrap" 
-            d:LayoutOverrides="LeftMargin, RightMargin" 
             Height="50" 
             InputScope="Password" />
         
         <Button
             x:Name="buttonLogin"
             Grid.Row="1"
-            Margin="50,0,50,190"
+            Margin="50,0,50,170"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
             Content="Prijava" 
-            Height="60" 
-            d:LayoutOverrides="LeftMargin, RightMargin" 
+            Height="60"  
             FontSize="20" 
             Background="LightGoldenrodYellow"
             Foreground="Blue"/>
@@ -108,12 +101,11 @@
         <Button
             x:Name="buttonNazad"
             Grid.Row="1"
-            Margin="50,0,50,100"
+            Margin="50,0,50,80"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
             Content="Nazad" 
             Height="60" 
-            d:LayoutOverrides="LeftMargin, RightMargin" 
             FontSize="20" 
             Background="LightGoldenrodYellow"
             Foreground="Blue"/>

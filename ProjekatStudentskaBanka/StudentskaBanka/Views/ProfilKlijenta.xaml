@@ -193,10 +193,9 @@
 
         </Grid>
 
-
+<!--
         <ListView x:Name="listView_transactions" 
-                  Margin="10,10,12,10" 
-        >
+                  Margin="10,10,12,10">
             <ListView.ItemTemplate>
                 <DataTemplate x:Name = "transactionListTemplate">
                     <Border BorderThickness="1" Padding="5">
@@ -218,7 +217,9 @@
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView> -->
+        
+        
     </StackPanel>
     </ScrollViewer>
 </Page>

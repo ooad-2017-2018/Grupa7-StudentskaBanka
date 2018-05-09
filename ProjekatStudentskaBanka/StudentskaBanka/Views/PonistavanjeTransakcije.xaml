@@ -21,8 +21,7 @@
                    VerticalAlignment="Center"
                    FontFamily="Segoe UI" 
                    FontSize="30" 
-                   Foreground="White"
-                   d:LayoutOverrides="Height, LeftMargin, RightMargin, TopMargin, BottomMargin, TopPosition, BottomPosition"/>
+                   Foreground="White"/>
 
 
         <TextBlock x:Name="textBlock_sifra" 
