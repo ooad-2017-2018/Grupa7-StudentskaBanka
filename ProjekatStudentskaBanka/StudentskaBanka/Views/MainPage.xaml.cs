@@ -41,7 +41,7 @@ namespace StudentskaBanka
         private void hypelinkRegistracija_Click(object sender, RoutedEventArgs e)
         {
             //ovo je samo radi probe
-            Frame.Navigate(typeof(KonvertorValuta));
+            Frame.Navigate(typeof(Registracija));
         }
     }
 }

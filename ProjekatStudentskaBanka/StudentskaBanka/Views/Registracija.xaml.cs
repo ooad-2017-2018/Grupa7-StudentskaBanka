@@ -26,5 +26,6 @@ namespace StudentskaBanka
         {
             this.InitializeComponent();
         }
+        
     }
 }
