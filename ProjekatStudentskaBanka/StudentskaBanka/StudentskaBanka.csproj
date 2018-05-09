@@ -161,6 +161,10 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+	<Page Include="Views\Registracija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.1</Version>
