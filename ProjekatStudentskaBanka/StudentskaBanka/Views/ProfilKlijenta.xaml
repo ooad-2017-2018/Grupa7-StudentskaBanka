@@ -7,185 +7,196 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="Blue">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="190*"/>
-            <RowDefinition Height="490*"/>
-            
-            <!--<RowDefinition Height="110*"/>
-            <RowDefinition Height="89*"/>
-            <RowDefinition Height="94*"/>
-            <RowDefinition Height="347*"/> -->
-        </Grid.RowDefinitions>
-        
+    <ScrollViewer>
+    <StackPanel Background="Blue">
+
         <TextBlock x:Name="textBlockNaslov" 
                    TextWrapping="Wrap" 
                    Text="PROFIL KORISNIKA" 
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Margin="0,0,0,0" 
+                   Margin="0,10,0,10" 
                    FontFamily="Segoe UI" 
                    FontSize="30" 
                    Foreground="White"
                    Grid.Row="0"
-                   d:LayoutOverrides="Height, LeftMargin, RightMargin, TopMargin, BottomMargin, TopPosition, BottomPosition"/>
+        />
 
         <Border
             Height="5"
-            Margin="0,0,0,3"
+            Margin="0,0,0,10"
             VerticalAlignment="Bottom"
             BorderBrush="LightGoldenrodYellow"
             BorderThickness="3" />
-        
-        <TextBlock x:Name="textBlockImePrezime" 
+
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="textBlockImePrezime" 
                    HorizontalAlignment="Left" 
                    TextWrapping="Wrap" 
                    Text="Ime i prezime: " 
                    VerticalAlignment="Top" 
-                   Margin="30,30,0,0" 
-                   Grid.Row="1" 
+                   Margin="30,10,20,0" 
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-        
-        <TextBlock x:Name="textBlock_ImePrezime" 
-                   Margin="170,30,0,0" 
-                   Grid.Row="1" 
+            />
+
+            <TextBlock x:Name="textBlock_ImePrezime"
+                   Grid.Column="1"
+                   Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top" 
                    FontFamily="Segoe UI"
                    Text="nesto"
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                   />
 
-        <TextBlock x:Name="textBlockJMBG" 
+            <TextBlock x:Name="textBlockJMBG" 
+                   Grid.Row="1"
                    HorizontalAlignment="Left" 
                    TextWrapping="Wrap" 
                    Text="JMBG: " 
                    VerticalAlignment="Top" 
-                   Margin="30,65,0,0" 
-                   Grid.Row="1" 
+                   Margin="30,10,20,0" 
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+            />
 
-        <TextBlock x:Name="textBlock_JMBG" 
-                   Margin="100,65,0,0" 
+            <TextBlock x:Name="textBlock_JMBG" 
                    Grid.Row="1" 
+                   Grid.Column="1"
+                   Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
                    Text="nesto"
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+            />
 
-        <TextBlock x:Name="textBlockAdresa" 
+            <TextBlock x:Name="textBlockAdresa"
+                   Grid.Row="2"
+                   Margin="30,10,20,0" 
                    HorizontalAlignment="Left" 
                    TextWrapping="Wrap" 
                    Text="Adresa: " 
                    VerticalAlignment="Top" 
-                   Margin="30,100,0,0" 
-                   Grid.Row="1" 
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+            />
 
-        <TextBlock x:Name="textBlock_Adresa" 
-                   Margin="110,100,0,0" 
-                   Grid.Row="1" 
+            <TextBlock x:Name="textBlock_Adresa" 
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
                    Text="nesto"
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+            />
 
-        <TextBlock x:Name="textBlockBrTel" 
+            <TextBlock x:Name="textBlockBrTel" 
+                   Grid.Row="3" 
+                   Margin="30,10,20,0" 
                    HorizontalAlignment="Left" 
                    TextWrapping="Wrap" 
                    Text="Broj telefona: " 
                    VerticalAlignment="Top" 
-                   Margin="30,135,0,0" 
-                   Grid.Row="1" 
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                   />
 
-        <TextBlock x:Name="textBlock_BrTel" 
-                   Margin="160,135,0,0" 
-                   Grid.Row="1" 
+            <TextBlock x:Name="textBlock_BrTel" 
+                   Grid.Row="3" 
+                   Grid.Column="1"
+                   Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
                    Text="nesto"
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                   />
 
-        
-        <TextBlock x:Name="textBlockEmail" 
+
+            <TextBlock x:Name="textBlockEmail" 
+                   Grid.Row="4" 
                    HorizontalAlignment="Left" 
                    TextWrapping="Wrap" 
                    Text="E-mail: " 
                    VerticalAlignment="Top" 
-                   Margin="30,170,0,0" 
-                   Grid.Row="1" 
+                   Margin="30,10,20,0" 
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                   />
 
 
-        <TextBlock x:Name="textBlock_Email" 
-                   Margin="100,170,0,0" 
-                   Grid.Row="1" 
+            <TextBlock x:Name="textBlock_Email" 
+                   Grid.Row="4" 
+                   Grid.Column="1"
+                   Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
                    Text="nesto"
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                   />
 
 
-        <TextBlock x:Name="textBlockStanje" 
+            <TextBlock x:Name="textBlockStanje" 
+                   Grid.Row="5" 
                    HorizontalAlignment="Left" 
                    TextWrapping="Wrap" 
                    Text="Stanje na računu: " 
                    VerticalAlignment="Top" 
-                   Margin="30,200,0,0" 
-                   Grid.Row="1" 
+                   Margin="30,10,20,0" 
                    FontFamily="Segoe UI" 
                    FontSize="30" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                   />
 
 
 
-        <TextBlock x:Name="textBlock_Stanje" 
-                   Margin="270,200,0,0" 
-                   Grid.Row="1" 
+            <TextBlock x:Name="textBlock_Stanje" 
+                   Grid.Row="5" 
+                   Grid.Column="1"
+                   Margin="0,10,10,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
                    Text="nesto"
                    FontFamily="Segoe UI" 
                    FontSize="30" 
                    Foreground="White"
-                   d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                   />
+
+        </Grid>
 
 
         <ListView x:Name="listView_transactions" 
                   Margin="10,10,12,10" 
-                  Grid.Row="3" 
-                  d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition">
+        >
             <ListView.ItemTemplate>
                 <DataTemplate x:Name = "transactionListTemplate">
                     <Border BorderThickness="1" Padding="5">
@@ -208,13 +219,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-
-
-
-
-
-
-    </Grid>
-
+    </StackPanel>
+    </ScrollViewer>
 </Page>
