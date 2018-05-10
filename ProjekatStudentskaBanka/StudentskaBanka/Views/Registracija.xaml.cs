@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.WindowsAzure.MobileServices;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,6 +24,9 @@ namespace StudentskaBanka
     /// </summary>
     public sealed partial class Registracija : Page
     {
+
+        IMobileServiceTable<korisnici> userTableObj = App.MobileService.GetTable<korisnici>();
+
         public Registracija()
         {
             this.InitializeComponent();
@@ -46,6 +51,32 @@ namespace StudentskaBanka
         private void buttonNazad_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void buttonRegistruj_Click(System.Object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                korisnici obj = new korisnici();
+                obj.ime = ImeUpis.Text;
+                obj.prezime = PrezimeUpis.Text;
+                obj.jmbg = JMBGUpis.Text;
+                obj.brojTelefona = BrojTelUpis.Text;
+                obj.adresa = AdresaUpis.Text;
+                obj.username = EmailUpis.Text;
+                obj.password = "sifra";
+                obj.uposlen = false;
+
+                userTableObj.InsertAsync(obj);
+                MessageDialog msgDialog = new MessageDialog("Uspješno ste unijeli novog studenta.");
+                msgDialog.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                msgDialogError.ShowAsync();
+            }
+
         }
     }
 }

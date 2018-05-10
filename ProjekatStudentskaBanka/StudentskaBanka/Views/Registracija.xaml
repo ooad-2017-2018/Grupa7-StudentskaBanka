@@ -66,8 +66,7 @@
                 Content="Registruj me" 
                 FontSize="20" 
                 Background="LightGoldenrodYellow"
-                Foreground="Blue"
-                IsEnabled="False"
+                Foreground="Blue" Click="buttonRegistruj_Click"
             />
 
             <HyperlinkButton
