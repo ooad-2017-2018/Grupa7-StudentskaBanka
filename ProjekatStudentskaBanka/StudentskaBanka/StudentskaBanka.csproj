@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="korisnici.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\Kredit.cs" />
     <Compile Include="Models\Moderator.cs" />
@@ -116,7 +117,7 @@
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-	<Compile Include="Views\Registracija.xaml.cs">
+    <Compile Include="Views\Registracija.xaml.cs">
       <DependentUpon>Registracija.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
