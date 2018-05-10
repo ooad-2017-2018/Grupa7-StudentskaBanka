@@ -102,6 +102,8 @@
     <Compile Include="Models\Racun.cs" />
     <Compile Include="Models\StudentskaBanka.cs" />
     <Compile Include="Models\Transakcija.cs" />
+	<Compile Include="Views\Registracija.xaml.cs">
+	<Compile Include="Views\NovaTransakcija.xaml.cs">
     <Compile Include="Views\ProfilKlijenta.xaml.cs">
       <DependentUpon>ProfilKlijenta.xaml</DependentUpon>
     </Compile>
