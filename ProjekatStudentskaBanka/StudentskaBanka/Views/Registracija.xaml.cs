@@ -26,6 +26,26 @@ namespace StudentskaBanka
         {
             this.InitializeComponent();
         }
-        
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Handle(sender as CheckBox);
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Handle(sender as CheckBox);
+        }
+
+        void Handle(CheckBox checkBox)
+        {
+            // Use IsChecked.
+            buttonRegistruj.IsEnabled = checkBox.IsChecked.Value;
+        }
+
+        private void buttonNazad_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }

@@ -54,7 +54,7 @@
 
             <StackPanel Orientation="Horizontal" Height="Auto" Margin="10,10,0,0">
                 <TextBlock Name="Provjera" Text="Provjerite sve podatke i cekirajte kvadratic" Margin="0,0,20,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <CheckBox Name="Cheker" VerticalAlignment="Center"/>
+                <CheckBox Name="Cheker" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" VerticalAlignment="Center"/>
             </StackPanel>
 
 
@@ -68,6 +68,18 @@
                 Background="LightGoldenrodYellow"
                 Foreground="Blue"
                 IsEnabled="False"
+            />
+
+            <HyperlinkButton
+                x:Name="buttonNazad"
+                Grid.Row="1"
+                Margin="0,40,0,20"
+                HorizontalAlignment="Center"
+                Content="Nazad" 
+                FontSize="20" 
+                Background="LightGoldenrodYellow"
+                Foreground="Blue"
+                Click="buttonNazad_Click"
             />
 
         </StackPanel>
