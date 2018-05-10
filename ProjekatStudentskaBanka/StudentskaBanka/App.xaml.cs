@@ -14,9 +14,26 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.WindowsAzure.MobileServices;
+
+public static MobileServiceClient MobileService = new MobileServiceClient("https://studentskabanka.azurewebsites.net");
 
 namespace StudentskaBanka
 {
+
+    class korisnici
+    {
+        public int ID { get; set; }
+        public string ime { get; set; }
+        public string prezime { get; set; }
+        public string jmbg { get; set; }
+        public string brojTelefona { get; set; }
+        public string adresa { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public bool uposlen { get; set; }
+
+    }
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
