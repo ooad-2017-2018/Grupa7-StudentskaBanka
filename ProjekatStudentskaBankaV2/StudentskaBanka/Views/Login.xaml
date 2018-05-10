@@ -1,0 +1,119 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StudentskaBanka"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModels="using:StudentskaBanka.ViewModels"
+    x:Class="StudentskaBanka.Login"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <ViewModels:LoginViewModel/>
+    </Page.DataContext>
+
+    <Grid Background="Blue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="51*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            x:Name="textBoxPrijavaNaslov"
+            Margin="110,15,110,25"
+            FontSize="36"
+            Text="LOGIN"
+            TextWrapping="Wrap" 
+            FontFamily="Microsoft JhengHei Light" 
+            TextAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="White"/>
+
+        <TextBlock
+            x:Name="textBlock1"
+            Margin="116,0,112,40"
+            VerticalAlignment="Bottom"
+            Text="Upišite pristupne podatke!"
+            TextWrapping="Wrap" 
+            Height="20" 
+            FontFamily="Microsoft JhengHei Light"  
+            TextAlignment="Center"
+            Foreground="White"/>
+
+
+        <Border
+            Height="5"
+            Margin="0,0,0,3"
+            VerticalAlignment="Bottom"
+            BorderBrush="White"
+            BorderThickness="3" />
+
+        <TextBlock
+            x:Name="textBlockKorisnickoIme"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="30,30,144,0"
+            Text="Korisničko ime:"
+            TextWrapping="Wrap"  
+            FontFamily="Segoe UI" 
+            FontSize="20"
+            Foreground="White"/>
+
+        <TextBox
+            x:Name="textBoxKorisnickoIme"
+            Grid.Row="1"
+            Margin="30,80,24,0"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" 
+            Height="50" 
+            Background="White"/>
+
+        <TextBlock
+            x:Name="textBlockSifra"
+            Grid.Row="1"
+            Margin="29,170,0,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Text="Password:"
+            TextWrapping="Wrap" 
+            Foreground="White"
+            FontFamily="Segoe UI" 
+            FontSize="20" />
+
+        <TextBox
+            x:Name="textBoxSifra"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            Margin="28,220,24,217"
+            Background="White" 
+            TextWrapping="Wrap" 
+            Height="50" 
+            InputScope="Password" />
+
+        <Button
+            x:Name="buttonLogin"
+            Grid.Row="1"
+            Margin="50,0,50,170"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Content="Prijava" 
+            Height="60"  
+            FontSize="20" 
+            Background="LightGoldenrodYellow"
+            Foreground="Blue"/>
+
+        <Button
+            x:Name="buttonNazad"
+            Grid.Row="1"
+            Margin="50,0,50,80"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Content="Nazad" 
+            Height="60" 
+            FontSize="20" 
+            Background="LightGoldenrodYellow"
+            Foreground="Blue"/>
+
+    </Grid>
+</Page>
