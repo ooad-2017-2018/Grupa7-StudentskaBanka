@@ -9,8 +9,8 @@
     Background="Blue">
 
     <ScrollViewer >
-         <StackPanel Margin="10,30,0,0" HorizontalAlignment="Center">
-             <TextBlock Name="Naslov" Text="Registracija" Margin="0,0,0,30" FontSize="25" HorizontalAlignment="Center"></TextBlock>
+         <StackPanel Margin="10,40,0,0" HorizontalAlignment="Center">
+             <TextBlock Name="Naslov" Text="Registracija" Margin="0,0,0,35" FontSize="25" HorizontalAlignment="Center"></TextBlock>
              <Grid Margin="10,0,10,0">
                  <Grid.ColumnDefinitions>
                      <ColumnDefinition/>
@@ -55,6 +55,11 @@
             <StackPanel Orientation="Horizontal" Height="Auto" Margin="10,10,0,0">
                 <TextBlock Name="Provjera" Text="Provjerite sve podatke i cekirajte kvadratic" Margin="0,0,20,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
                 <CheckBox Name="Cheker" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Height="Auto" Margin="10,10,0,0">
+                <TextBlock Name="Uposlenik" Text="Uposlenik?_" Margin="0,0,30,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                <CheckBox Name="UposlenikChecker" VerticalAlignment="Center"/>
             </StackPanel>
 
 
