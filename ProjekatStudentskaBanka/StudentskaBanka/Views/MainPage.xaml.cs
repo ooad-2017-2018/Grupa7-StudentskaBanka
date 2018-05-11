@@ -32,6 +32,7 @@ namespace StudentskaBanka
 
         }
 
+        /*
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
             //ovo je samo radi probe
@@ -43,5 +44,7 @@ namespace StudentskaBanka
             //ovo je samo radi probe
             Frame.Navigate(typeof(Registracija));
         }
+
+        */
     }
 }

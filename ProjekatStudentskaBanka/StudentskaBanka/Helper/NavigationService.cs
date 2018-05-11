@@ -14,7 +14,7 @@ namespace StudentskaBanka.Helper
         void Navigate(Type sourcePage, object parameter);
         void GoBack();
     }
-    class NavigationService : INavigationService
+    public class NavigationService : INavigationService
     {
         public void Navigate(Type sourcePage)
         {

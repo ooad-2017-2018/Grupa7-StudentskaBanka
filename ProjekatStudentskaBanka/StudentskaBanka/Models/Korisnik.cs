@@ -11,6 +11,7 @@ namespace StudentskaBanka.Models
         private int id;
         private String ime, prezime, jmbg, brTelefona, adresa, username, password;
         private bool uposlen;
+        private Racun racun;
 
         static int globalID = 1;
 
@@ -23,6 +24,7 @@ namespace StudentskaBanka.Models
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public bool Uposlen { get => uposlen; set => uposlen = value; }
+        public Racun Racun { get => racun; set => racun = value; }
 
         public Korisnik(string ime, string prezime, string jmbg, string brTelefona, string adresa, string username, string password, bool uposlen)
         {
@@ -36,6 +38,7 @@ namespace StudentskaBanka.Models
             Username = username;
             Password = password;
             Uposlen = uposlen;
+            Racun = new Racun();
         }
     }
 }

@@ -95,6 +95,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\BazaService.cs" />
+    <Compile Include="Helper\NavigationService.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="korisnici.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\Kredit.cs" />
@@ -102,6 +105,12 @@
     <Compile Include="Models\Racun.cs" />
     <Compile Include="Models\StudentskaBanka.cs" />
     <Compile Include="Models\Transakcija.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\NovaTransakcijaViewModel.cs" />
+    <Compile Include="ViewModels\PonistavanjeTransakcijeViewModel.cs" />
+    <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="Views\ProfilKlijenta.xaml.cs">
       <DependentUpon>ProfilKlijenta.xaml</DependentUpon>
     </Compile>
@@ -184,6 +193,7 @@
       <Version>6.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

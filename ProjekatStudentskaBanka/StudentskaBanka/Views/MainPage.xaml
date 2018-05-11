@@ -5,6 +5,7 @@
     xmlns:local="using:StudentskaBanka"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:StudentskaBanka.ViewModels"
     mc:Ignorable="d">
 
     <Grid Background="Blue" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" RenderTransformOrigin="0.835,0.711">
@@ -202,9 +203,9 @@
         <Image x:Name="bankLogo"/>
         <TextBlock x:Name="textBlockSlogan"/>
         <TextBlock x:Name="textBlockDobrodosli" Margin="450,904,0,-234"/>
-        <Button x:Name="buttonLogin" Margin="580,974,0,-324" Click="buttonLogin_Click"/>
+        <Button x:Name="buttonLogin" Margin="580,974,0,-324" Command="{Binding Path=PrijaviSe}"/>
         <TextBlock x:Name="textBlockPitanje" Margin="530,1044,0,-367" RenderTransformOrigin="-1.313,-1.939"/>
-        <HyperlinkButton x:Name="hypelinkRegistracija" Margin="700,1037,0,-366" Click="hypelinkRegistracija_Click"/>
+        <HyperlinkButton x:Name="hypelinkRegistracija" Margin="700,1037,0,-366"/>
         
 
 

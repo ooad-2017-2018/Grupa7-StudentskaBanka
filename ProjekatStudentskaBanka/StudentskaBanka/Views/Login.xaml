@@ -62,12 +62,12 @@
             VerticalAlignment="Top"
             TextWrapping="Wrap" 
             Height="50" 
-            Background="White"/>
+            Background="White" FontSize="10"/>
 
         <TextBlock
             x:Name="textBlockSifra"
             Grid.Row="1"
-            Margin="29,170,0,0"
+            Margin="29,142.4,0,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             Text="Password:"
@@ -80,7 +80,7 @@
             x:Name="textBoxSifra"
             Grid.Row="1"
             VerticalAlignment="Top"
-            Margin="28,220,24,217"
+            Margin="28,186.4,24,0"
             Background="White" 
             TextWrapping="Wrap" 
             Height="50" 
@@ -89,7 +89,7 @@
         <Button
             x:Name="buttonLogin"
             Grid.Row="1"
-            Margin="50,0,50,170"
+            Margin="50,0,50,108"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
             Content="Prijava" 
@@ -101,7 +101,7 @@
         <Button
             x:Name="buttonNazad"
             Grid.Row="1"
-            Margin="50,0,50,80"
+            Margin="50,0,50,38"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
             Content="Nazad" 
