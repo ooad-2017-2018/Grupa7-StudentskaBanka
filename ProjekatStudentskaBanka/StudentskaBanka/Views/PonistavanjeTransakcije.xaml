@@ -30,25 +30,29 @@
                    Margin="20,19.6,0,0" 
                    TextWrapping="Wrap" 
                    Foreground="White" 
-                   Text="Unesite sifru transakcije: " 
+                   Text="Unesite šifru transakcije: " 
                    VerticalAlignment="Top" 
                    FontSize="23" 
                    FontFamily="Segoe UI"/>
 
-        <TextBlock x:Name="textBlock_ID" Grid.Row="1"  Margin="0,20,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
+        <!--
+         <TextBlock x:Name="textBlock_ID" Grid.Row="1"  Margin="0,20,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
         <TextBlock x:Name="textBlock_type" Grid.Row="1" Margin="0,50,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
         <TextBlock x:Name="textBlock_toAccount" Grid.Row="1" HorizontalAlignment="Right" Margin="0,80,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
         <TextBlock x:Name="textBlock_date" Grid.Row="1" Margin="0,110,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI" HorizontalAlignment="Right"/>
         <TextBlock x:Name="textBlock_amount" Grid.Row="1" HorizontalAlignment="Right" Margin="0,140,10,0" TextWrapping="Wrap" Foreground="White" Text="" VerticalAlignment="Top" FontSize="23" FontFamily="Segoe UI"/>
+        -->
+        
         <Button x:Name="button_ponisti" Grid.Row="1" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Poništi transakciju" VerticalAlignment="Top" Margin="10,174,10,0" Height="55" HorizontalAlignment="Stretch" />
         <Button x:Name="button_nazad" Grid.Row="1" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Nazad" VerticalAlignment="Top" Margin="10,235,10,0" Height="55" HorizontalAlignment="Stretch" />
-        <TextBox HorizontalAlignment="Left" Margin="20,79.6,0,0" Grid.Row="1" TextWrapping="Wrap" PlaceholderText="Broj transakcije" VerticalAlignment="Top" Width="989">
-            <TextBox.FocusVisualSecondaryBrush>
+       
+        <TextBox HorizontalAlignment="Left" Background="White" Margin="20,79.6,0,0" Grid.Row="1" TextWrapping="Wrap" PlaceholderText="Broj transakcije" VerticalAlignment="Top" Width="989">
+            <!--<TextBox.FocusVisualSecondaryBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
-            </TextBox.FocusVisualSecondaryBrush>
+            </TextBox.FocusVisualSecondaryBrush>-->
         </TextBox>
     </Grid>
 </Page>
