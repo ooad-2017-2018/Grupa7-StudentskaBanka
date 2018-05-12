@@ -17,6 +17,7 @@ namespace StudentskaBanka
         public string username { get; set; }
         public string password { get; set; }
         public bool uposlen { get; set; }
+        public int racun_id { get; set; }
 
     }
 }

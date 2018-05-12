@@ -95,10 +95,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helper\BazaService.cs" />
+    <Compile Include="AzureDatabase\Baza.cs" />
+    <Compile Include="AzureDatabase\krediti.cs" />
+    <Compile Include="AzureDatabase\racuni.cs" />
+    <Compile Include="AzureDatabase\transakcije.cs" />
     <Compile Include="Helper\NavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
-    <Compile Include="korisnici.cs" />
+    <Compile Include="AzureDatabase\korisnici.cs" />
     <Compile Include="Models\Korisnik.cs" />
     <Compile Include="Models\Kredit.cs" />
     <Compile Include="Models\Moderator.cs" />
