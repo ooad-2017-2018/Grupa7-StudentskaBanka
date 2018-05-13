@@ -10,19 +10,11 @@ namespace StudentskaBanka.AzureDatabase
 {
     public class Baza
     {
-        //GURU ZA BAZE
-
-        //Id korisnika treba da bude i id racuna jer 1 korisnik = 1 racun.
-        //Malo je promijenjen model, pogledaj opet klasu racun i korisnik
-        //korisnik ima atribut racun kod sebe a racun nema id nego koristi korisnikov. 
-        //ovo omogucuje da se lako spoje ove 2 tabele preko foreign keya u bazi
-
-        //Striktno uraditi sta je napisano u funkcijama i nista vise
-        //Ne trebaju nikakve provjere, sve je provjereno tamo
-        
-        //TREBA MI U BAZI jedan insan, neka ima id 1, neka je to neki racun banke 
-        //On mi treba da bih mogao omoguciti da se uplati na neki racun iako covjek koji uplacuje nema racun.
-
+        private static bool provjeriDatum(DateTime datum)
+        {
+            if ((DateTime.Now - datum).TotalDays > 3)
+                return false;
+        }
         
 
         public Baza()
@@ -44,6 +36,31 @@ namespace StudentskaBanka.AzureDatabase
             }
 
             return false;
+        }
+
+        public static async Task<Korisnik> dajKorisnika(string username, string password)
+        {
+            try
+            {
+                bool provjera = postojiLiUsernamePassword(username, password);
+                if(provjera)
+                {
+                    IMobileServiceTable<korisnici> Korisnici = App.MobileService.GetTable<korisnici>();
+
+                    IEnumerable<korisnici> tabela = await Korisnici.ReadAsync();
+
+                    foreach (var element in tabela)
+                    {
+                        if (element.username.Equals(Username) && element.password.Equals(Password))
+                            return element;
+                    }
+                }
+            }
+            catch(Exception r)
+            {
+                throw;
+            }
+
         }
 
         public static async Task<bool> moguceIzvrsitiTransakciju(int posiljalac, int primalac, float iznos)
@@ -98,25 +115,40 @@ namespace StudentskaBanka.AzureDatabase
             return true;
         }
 
-        public void izvrsiTransakciju(int posiljalac, int primalac, float iznos)
+        public static async void izvrsiTransakciju(int posiljalac, int primalac, float iznos)
         {
-            /*
-            if (posiljalac == 1)
-            //Na racun primaoca staviti iznos
-            else 
-                //Na racun primaoca staviti iznos
-                //Sa racuna posiljaoca skinuti iznos
-            */
 
             IMobileServiceTable<korisnici> Korisnici = App.MobileService.GetTable<korisnici>();
             IMobileServiceTable<racuni> Racuni = App.MobileService.GetTable<racuni>();
 
-            bool moguce = false;
-
             IEnumerable<korisnici> tabelaK = await Korisnici.ReadAsync();
             IEnumerable<racuni> tabelaR = await Racuni.ReadAsync();
 
-            // nije gotovo
+            foreach (var elementK in tabelaK)
+            {
+                if (elementK.ID.Equals(posiljalac))
+                    foreach (var elementR in tabelaR)
+                    {
+                        if (elementK.racun_id.Equals(elementR.ID))
+                        {
+                            elementR.stanje -= iznos;
+                            Racuni.UpdateAsync(elementR);
+                        }
+
+                    }
+                if(elementK.ID.Equals(primalac))
+                    foreach (var elementR in tabelaR)
+                    {
+                        if (elementK.racun_id.Equals(elementR.ID))
+                        {
+                            elementR.stanje += iznos;
+                            Racuni.UpdateAsync(elementR);
+                        }
+
+                    }
+            }
+
+            // gotovo
         }
 
         public void ponistiTransakciju(int idTransakcije)
@@ -124,22 +156,91 @@ namespace StudentskaBanka.AzureDatabase
             //imas id transakcije, mozes naci racun primaoca i posiljaoca i iznost
             //sa racuna primaoca skinuti iznos (naravno da se moze ici u minus)
             //na racun posiljaoca staviti iznos
+            
+
+            //bit ce uradjeno nakon odredjenih provjera
         }
 
-        public bool mogucePonistitiTransakciju(int idTransakcije)
+        public static async Task<bool> mogucePonistitiTransakciju(int idTransakcije)
         {
             //ako se nalazi transakcija u bazi = return true
             //mozes dodati ogranicenje ako je starija od 3 dana, il sta na taj fazon al ne moras se peglat
             //ako budes htio pripazi presjek sa prvim uslovom
 
+            IMobileServiceTable<transakcije> Transakcije = App.MobileService.GetTable<transakcije>();
+            IEnumerable<transakcije> tabelaT = await Transakcije.ReadAsync();
+
+            bool postoji = false;
+            foreach(var elementT in tabelaT)
+            {
+                //provjerava se da li uopste postoji 
+                if (elementT.ID.Equals(idTransakcije))
+
+                    //ako postoji provjeri se da li je starija od 3 dana, funkcija provjeriDatum je iznad u kodu
+                    if(provjeriDatum(elementT.vrijeme))
+                    {
+                        return true;
+                        break;
+                    }
+            }
+
             return false;
         }
 
-        public void registrujKorisnika(String ime, String prezime, String jmbg, String adresa, String brojTelefona, String email, String sifra, bool uposlenik)
+        public static async void dodajKorisnika(korisnici korisnik)
         {
-            //sve jasno bi trebalo biti
-            //pripazi na taj ID korisnika, PRVI u bazi mi mora biti neki nas domacin, admin admin admin admin, nek su mu svi atributi admin i id = 1
+            IMobileServiceTable<korisnici> Korisnici = App.MobileService.GetTable<korisnici>();
 
+            try
+            {
+                await Korisnici.InsertAsync(korisnik);
+            }
+            catch(Exception e)
+            {
+                throw;
+            }
+        }
+
+        public static async void dodajTransakciju(transakcije transakcija)
+        {
+            IMobileServiceTable<transakcije> Transakcije = App.MobileService.GetTable<transakcije>();
+
+            try
+            {
+                await Transakcije.InsertAsync(transakcija);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public static async void dodajKredit(krediti kredit)
+        {
+            IMobileServiceTable<krediti> Krediti = App.MobileService.GetTable<krediti>();
+
+            try
+            {
+                await Krediti.InsertAsync(kredit);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public static async void dodajRacun(racuni racun)
+        {
+            IMobileServiceTable<racuni> Racuni = App.MobileService.GetTable<racuni>();
+
+            try
+            {
+                await Racuni.InsertAsync(racun);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
     }
