@@ -10,7 +10,7 @@ namespace StudentskaBanka.ViewModels
 {
     public class MainPageViewModel
     {
-        INavigationService NavigationService { get; set; }
+        NavigationService NavigationService { get; set; }
 
         public ICommand PrijaviSe { get; set; }
         public ICommand RegistrujSe { get; set; }
@@ -28,8 +28,7 @@ namespace StudentskaBanka.ViewModels
 
         public void otvoriLoginView(object o)
         {
-            //strana 25 na kerimovom dodatku pise ovo ispod : (treba vidjeti kakav parent treba, sta, zasto)
-            //prebacuje na sljedeci view i proslijedjuje viewmodel za taj view, koji ima ovaj view (this) kao Parent            NavigationService.Navigate(typeof(Login));
+            NavigationService.Navigate(typeof(Login), NavigationService);
         }
 
         #endregion PrijaviSe
@@ -37,9 +36,7 @@ namespace StudentskaBanka.ViewModels
         #region RegistrujSe
         public void otvoriRegistracijaView(object o)
         {
-            //strana 25 na kerimovom dodatku pise ovo ispod : (treba vidjeti kakav parent treba, sta, zasto)
-            //prebacuje na sljedeci view i proslijedjuje viewmodel za taj view, koji ima ovaj view (this) kao Parent
-            NavigationService.Navigate(typeof(Registracija));
+            NavigationService.Navigate(typeof(Registracija), NavigationService);
         }
         #endregion RegistrujSe
 

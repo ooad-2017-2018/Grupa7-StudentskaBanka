@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentskaBanka.Helper;
+using StudentskaBanka.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,16 @@ namespace StudentskaBanka
         public Login()
         {
             this.InitializeComponent();
+            //staviti da se vidi back
+            //var currentView = SystemNavigationManager.GetForCurrentView();
+            //currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            //SystemNavigationManager.GetForCurrentView().BackRequested += ThisPage_BackRequested;
+        }
+
+        //prosljedjivanje parametra pri navigaciji. NavigationService je bio proslijedjen
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = new LoginViewModel((NavigationService)e.Parameter);
         }
     }
 }

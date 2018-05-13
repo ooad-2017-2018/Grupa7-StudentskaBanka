@@ -1,4 +1,5 @@
-﻿using StudentskaBanka.Helper;
+﻿using StudentskaBanka.AzureDatabase;
+using StudentskaBanka.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,9 @@ namespace StudentskaBanka.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        BazaService bazaPodataka;
         private String username;
         private String password;
+        private NavigationService ns;
 
         public ICommand PrijaviSe { get; set; }
         public ICommand Nazad { get; set; }
@@ -31,34 +32,32 @@ namespace StudentskaBanka.ViewModels
             get { return password; }
             set { password = value; OnPropertyChanged("Password"); }
         }
-        
 
-        public LoginViewModel()
+        public NavigationService Ns { get { return ns; } set => ns = value; }
+
+        public LoginViewModel(NavigationService navigationService)
         {
-            bazaPodataka = new BazaService();
             PrijaviSe = new RelayCommand<object>(otvoriProfilKlijentaView, postojiLiKorisnik);
             Nazad = new RelayCommand<object>(zatvoriLoginViewModel, returnTrue);
+            Ns = navigationService;
         }
-
-    
+        
         #region PrijaviSe
         public void otvoriProfilKlijentaView(object o)
         {
-            //strana 25 na kerimovom dodatku pise ovo ispod : (treba vidjeti kakav parent treba, sta, zasto)
-            //prebacuje na sljedeci view i proslijedjuje viewmodel za taj view, koji ima ovaj view (this) kao Parent
-            //NavigationService.Navigate(typeof(ProfilKlijenta));
+            ns.Navigate(typeof(ProfilKlijenta), new ObjectKorisnikNavigationService(ns, Baza.dajKorisnika(username, password)));
         }
 
         public bool postojiLiKorisnik(object o)
         {
-            return bazaPodataka.postojiLiUsernamePassword(username, password);
+            return Baza.postojiLiUsernamePassword(username, password);
         }
         #endregion PrijaviSe
 
         #region Nazad
         public void zatvoriLoginViewModel(object o)
         {
-            //NavigationService.GoBack();  //ili nesto tako, ima neka fja
+            Ns.GoBack();
         }
 
         #endregion Nazad

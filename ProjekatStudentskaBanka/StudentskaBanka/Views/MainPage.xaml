@@ -204,7 +204,7 @@
         <TextBlock x:Name="textBlockSlogan"/>
         <TextBlock x:Name="textBlockDobrodosli" Margin="450,904,0,-234"/>
         <Button x:Name="buttonLogin" Margin="580,974,0,-324" Command="{Binding Path=PrijaviSe}"/>
-        <HyperlinkButton x:Name="hypelinkRegistracija" Margin="700,1037,0,-366"/>
+        <HyperlinkButton x:Name="hypelinkRegistracija" Margin="700,1037,0,-366" Command="{Binding Path=RegistrujSe}"/>
         <TextBlock x:Name="textBlockPitanje" Margin="530,1044,0,-367" RenderTransformOrigin="-1.313,-1.939"/>
         
         

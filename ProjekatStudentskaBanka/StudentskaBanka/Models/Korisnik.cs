@@ -8,14 +8,11 @@ namespace StudentskaBanka.Models
 {
     public class Korisnik
     {
-        private int id;
         private String ime, prezime, jmbg, brTelefona, adresa, username, password;
         private bool uposlen;
         private Racun racun;
 
-        static int globalID = 1;
 
-        public int Id { get => id; set => id = value; }
         public string Ime { get => ime; set => ime = value; }
         public string Prezime { get => prezime; set => prezime = value; }
         public string Jmbg { get => jmbg; set => jmbg = value; }
@@ -26,10 +23,15 @@ namespace StudentskaBanka.Models
         public bool Uposlen { get => uposlen; set => uposlen = value; }
         public Racun Racun { get => racun; set => racun = value; }
 
+        public Korisnik()
+        {
+            ime = prezime = jmbg = brTelefona = adresa = username = password = null;
+            Racun = null;
+            uposlen = false;
+        }
+
         public Korisnik(string ime, string prezime, string jmbg, string brTelefona, string adresa, string username, string password, bool uposlen)
         {
-            Id = globalID;
-            globalID += 1;
             Ime = ime;
             Prezime = prezime;
             Jmbg = jmbg;

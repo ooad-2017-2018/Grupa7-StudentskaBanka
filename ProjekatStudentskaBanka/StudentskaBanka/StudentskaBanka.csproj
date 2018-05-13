@@ -100,6 +100,7 @@
     <Compile Include="AzureDatabase\racuni.cs" />
     <Compile Include="AzureDatabase\transakcije.cs" />
     <Compile Include="Helper\NavigationService.cs" />
+    <Compile Include="Helper\ObjectKorisnikNavigationService.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="AzureDatabase\korisnici.cs" />
     <Compile Include="Models\Korisnik.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\NovaTransakcijaViewModel.cs" />
     <Compile Include="ViewModels\PonistavanjeTransakcijeViewModel.cs" />
+    <Compile Include="ViewModels\ProfilKlijentaViewModel.cs" />
     <Compile Include="ViewModels\RegistracijaViewModel.cs" />
     <Compile Include="Views\ProfilKlijenta.xaml.cs">
       <DependentUpon>ProfilKlijenta.xaml</DependentUpon>

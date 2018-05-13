@@ -62,7 +62,8 @@
             VerticalAlignment="Top"
             TextWrapping="Wrap" 
             Height="50" 
-            Background="White" FontSize="10"/>
+            Background="White" FontSize="10"
+            Text="{Binding LoginViewModel.Username, UpdateSourceTrigger=PropertyChanged}"/>
 
         <TextBlock
             x:Name="textBlockSifra"
@@ -80,11 +81,12 @@
             x:Name="textBoxSifra"
             Grid.Row="1"
             VerticalAlignment="Top"
-            Margin="28,186.4,24,0"
+            Margin="28,189.4,24,0"
             Background="White" 
             TextWrapping="Wrap" 
             Height="50" 
-            InputScope="Password" />
+            InputScope="Password"
+            Text="{Binding LoginViewModel.Password, UpdateSourceTrigger=PropertyChanged}"/>
         
         <Button
             x:Name="buttonLogin"
@@ -96,8 +98,9 @@
             Height="60"  
             FontSize="20" 
             Background="LightGoldenrodYellow"
-            Foreground="Blue"/>
-
+            Foreground="Blue"
+            Command="{Binding Path=PrijaviSe}"/>
+            
         <Button
             x:Name="buttonNazad"
             Grid.Row="1"
@@ -108,7 +111,8 @@
             Height="60" 
             FontSize="20" 
             Background="LightGoldenrodYellow"
-            Foreground="Blue"/>
+            Foreground="Blue"
+            Command="{Binding Path=Nazad}"/>
         
     </Grid>
 </Page>

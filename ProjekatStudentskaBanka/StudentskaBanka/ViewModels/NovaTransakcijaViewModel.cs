@@ -1,4 +1,5 @@
-﻿using StudentskaBanka.Helper;
+﻿using StudentskaBanka.AzureDatabase;
+using StudentskaBanka.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,7 @@ namespace StudentskaBanka.ViewModels
 {
     public class NovaTransakcijaViewModel : BaseViewModel
     {
-        BazaService baza;
-        private bool prebacivanje;
+        private NavigationService ns;
         private int posiljalac;
         private int primalac;
         private float iznos;
@@ -19,41 +19,40 @@ namespace StudentskaBanka.ViewModels
         public ICommand IzvrsiTransakciju { get; set; }
         public ICommand Nazad { get; set; }
 
+
         //Nista nije bindano
 
+        public NavigationService Ns { get => ns; set => ns = value; }
         public int Posiljalac { get { return posiljalac; } set { posiljalac = value; OnPropertyChanged("Posiljalac"); } }
         public int Primalac { get { return primalac; } set { primalac = value; OnPropertyChanged("Primalac"); } }
         public float Iznos { get { return iznos; } set { iznos = value; OnPropertyChanged("Iznos"); } }
-
-
-        //Treba mi 
-        //TREBA MI NEGDJE DA PROVJERIM AKO JE SELEKTOVANO Uplata na racun
-        //odnosno ako je prebacivanje = false;
-        //da postavim posiljalac = 1, kako to da uradim?
-
-        public NovaTransakcijaViewModel()
+        
+        public NovaTransakcijaViewModel(NavigationService ns)
         {
-            baza = new BazaService();
+            ns = ns;
+            //kad tek udje na novaTransakcija mora biti selektovano prebaci sa racuna na racun
             IzvrsiTransakciju = new RelayCommand<object>(izvrsiTransakciju, moguceIzvrsitiTransakciju);
-            Nazad = new RelayCommand<object>(zatvoriLoginViewModel, returnTrue);
+            Nazad = new RelayCommand<object>(zatvoriNovaTransakcijaView, returnTrue);
         }
 
         #region IzvrsiTransakciju
         public void izvrsiTransakciju(object o)
         {
-            baza.izvrsiTransakciju(posiljalac, primalac, iznos);
+            Baza.izvrsiTransakciju(posiljalac, primalac, iznos);
         }
 
         public bool moguceIzvrsitiTransakciju(object o)
         {
-            return baza.moguceIzvrsitiTransakciju(posiljalac, primalac, iznos);
+            //ako je string, ako nije int vracaj false - ove
+            //provjeriti i posiljaoca i primaoca i iznos
+            return Baza.moguceIzvrsitiTransakciju(posiljalac, primalac, iznos);
         }
         #endregion IzvrsiTransakciju
 
         #region Nazad
-        public void zatvoriLoginViewModel(object o)
+        public void zatvoriNovaTransakcijaView(object o)
         {
-            //NavigationService.GoBack();  //ili nesto tako, ima neka fja
+            ns.GoBack();
         }
 
         #endregion Nazad

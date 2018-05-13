@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentskaBanka.Helper;
+using StudentskaBanka.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +27,11 @@ namespace StudentskaBanka
         public PonistavanjeTransakcije()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = new PonistavanjeTransakcijeViewModel((NavigationService)e.Parameter);
         }
     }
 }

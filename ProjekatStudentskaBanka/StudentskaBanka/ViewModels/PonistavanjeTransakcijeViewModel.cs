@@ -1,4 +1,5 @@
-﻿using StudentskaBanka.Helper;
+﻿using StudentskaBanka.AzureDatabase;
+using StudentskaBanka.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +11,22 @@ namespace StudentskaBanka.ViewModels
 {
     public class PonistavanjeTransakcijeViewModel : BaseViewModel
     {
-        BazaService baza;
-
+        private NavigationService ns;
         private int idTransakcije;
         public ICommand PonistiTransakciju { get; set; }
         public ICommand Nazad { get; set; }
+
+        public NavigationService Ns { get => ns; set => ns = value; }
+
 
         //TREBA NAPRAVITI KAD klikne Ponisti transakciju DA UZME ID TRANSAKCIJE I DA ODRADI PonistiTransakciju
         //gdje i kako izvrsiti provjeru ako je prazno polje idTransakcije ?
         public int IdTransakcije { get { return idTransakcije; } set { idTransakcije = value; OnPropertyChanged("IdTransakcije"); } }
 
-        public PonistavanjeTransakcijeViewModel()
+
+        public PonistavanjeTransakcijeViewModel(NavigationService ns)
         {
-            baza = new BazaService();
+            Ns = ns;
             PonistiTransakciju = new RelayCommand<object>(ponistiTransakciju, mogucePonistitiTransakciju);
             Nazad = new RelayCommand<object>(zatvoriPonistavanjeTransakcije, returnTrue);
         }
@@ -30,19 +34,19 @@ namespace StudentskaBanka.ViewModels
         #region PonistiTransakciju
         public void ponistiTransakciju(object o)
         {
-            baza.ponistiTransakciju(idTransakcije);
+            Baza.ponistiTransakciju(idTransakcije);
         }
 
         public bool mogucePonistitiTransakciju(object o)
         {
-            return baza.mogucePonistitiTransakciju(idTransakcije);
+            return Baza.mogucePonistitiTransakciju(idTransakcije);
         }
         #endregion PonistiTransakciju
 
         #region Nazad
         public void zatvoriPonistavanjeTransakcije(object o)
         {
-            //NavigationService.GoBack();  //ili nesto tako, ima neka fja
+            ns.GoBack();
         }
 
         #endregion Nazad
