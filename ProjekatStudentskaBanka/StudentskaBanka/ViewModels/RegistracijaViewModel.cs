@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace StudentskaBanka.ViewModels
 {
@@ -38,17 +39,20 @@ namespace StudentskaBanka.ViewModels
         public RegistracijaViewModel(NavigationService ns)
         {
             Ns = ns;
-            Registruj = new RelayCommand<object>(registrujKorisnika, moguceRegistrovatiKorisnika);
+            Registruj = new RelayCommand<object>(registrujKorisnika);
             Nazad = new RelayCommand<object>(zatvoriRegistracijaView, returnTrue);
             kvadraticCekiran = uposlenik = false;
         }
 
         #region Registruj
-        public void registrujKorisnika(object o)
+        public async void registrujKorisnika(object o)
         {
             Baza.dodajKorisnika(ime, prezime, jmbg, adresa, brojTelefona, email, sifra, uposlenik);
+            MessageDialog poruka = new MessageDialog("Uspješno ste obavili registraciju!");
+            await poruka.ShowAsync();
+            return;
         }
-        public bool moguceRegistrovatiKorisnika(object o)
+       /* public bool moguceRegistrovatiKorisnika(object o)
         {
             //milion validacija odradit na fazon da li je popunjeno, ovo ono...
             if (kvadraticCekiran == false)
@@ -56,7 +60,7 @@ namespace StudentskaBanka.ViewModels
             else if (!sifra.Equals(PonoviteSifru))
                 return false;
             return true;
-        }
+        }*/
         #endregion Registruj
         
         #region Nazad
