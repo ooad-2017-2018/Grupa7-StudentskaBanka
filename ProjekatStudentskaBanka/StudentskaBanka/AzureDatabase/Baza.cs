@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using StudentskaBanka.Models;
+using Windows.UI.Popups;
 
 namespace StudentskaBanka.AzureDatabase
 {
@@ -17,11 +18,12 @@ namespace StudentskaBanka.AzureDatabase
         //Funkcije koje si pravio mozes pozvati unutar ovih funkcija
         //One funkcije koje si pravio, mozes nastimati da ih pozovu ove fje i da proslijede njihov rezultat
 
-        public static bool postojiLiUsernamePassword(String username, String password)
+       /* public static async Task<bool> postojiLiUsernamePassword(String username, String password)
         {
-            return true;
-        }
-
+            bool rezultat = await postojiLiUsernamePassword1(username, password);
+            return rezultat;
+        }*/
+        /*
         public static Korisnik dajKorisnika(String username, String password)
         {
             //pogledaj konstruktor ovog Korisnik()
@@ -69,9 +71,9 @@ namespace StudentskaBanka.AzureDatabase
         public static void registrujKorisnika(String ime, String prezime, String jmbg, String adresa, String brojTelefona, String email, String sifra, bool uposlenik)
         {
             //Samo ga potrpaj u bazu;
-        }
+        }*/
         
-        /*
+        
         private static bool provjeriDatum(DateTime datum)
         {
             if ((DateTime.Now - datum).TotalDays > 3)
@@ -100,29 +102,46 @@ namespace StudentskaBanka.AzureDatabase
 
             return false;
         }
-
+        
         public static async Task<Korisnik> dajKorisnika(string username, string password)
         {
             try
             {
-                bool provjera = postojiLiUsernamePassword(username, password);
-                if(provjera)
+                IMobileServiceTable<korisnici> Korisnici = App.MobileService.GetTable<korisnici>();
+
+                IEnumerable<korisnici> tabela = await Korisnici.ReadAsync();
+
+                foreach (var element in tabela)
                 {
-                    IMobileServiceTable<korisnici> Korisnici = App.MobileService.GetTable<korisnici>();
-
-                    IEnumerable<korisnici> tabela = await Korisnici.ReadAsync();
-
-                    foreach (var element in tabela)
+                    if (element.username.Equals(username) && element.password.Equals(password))
                     {
-                        if (element.username.Equals(username) && element.password.Equals(password))
-                            return element;
+                        Racun racun = new Racun();
+                        IMobileServiceTable<racuni> Racuni = App.MobileService.GetTable<racuni>();
+
+                        IEnumerable<racuni> tabelaR = await Racuni.ReadAsync();
+
+                        foreach (var elementR in tabelaR)
+                            if (elementR.ID.Equals(element.racun_id))
+                            {
+                                racun.Stanje = elementR.stanje;
+                                racun.Blokiran = elementR.blokiran;
+                            }
+
+                        return new Korisnik(element.ime, element.prezime, element.jmbg, element.brojTelefona, element.adresa, element.username,
+                            element.password, element.uposlen, racun);
                     }
+
                 }
             }
-            catch(Exception r)
+            catch(Exception e)
             {
                 throw;
             }
+
+            
+            return new Korisnik(); // nece se nikada izvrsiti
+           
+            
         }
 
         public static async Task<bool> moguceIzvrsitiTransakciju(int posiljalac, int primalac, float iznos)
@@ -213,7 +232,7 @@ namespace StudentskaBanka.AzureDatabase
             // gotovo
         }
 
-        public void ponistiTransakciju(int idTransakcije)
+        public static async void ponistiTransakciju(int idTransakcije)
         {
             //imas id transakcije, mozes naci racun primaoca i posiljaoca i iznost
             //sa racuna primaoca skinuti iznos (naravno da se moze ici u minus)
@@ -249,9 +268,19 @@ namespace StudentskaBanka.AzureDatabase
             return false;
         }
 
-        public static async void dodajKorisnika(korisnici korisnik)
+        public static async void dodajKorisnika(string ime, string prezime, string jmbg, string brTelefona, string adresa, string username, string password, bool uposlen)
         {
             IMobileServiceTable<korisnici> Korisnici = App.MobileService.GetTable<korisnici>();
+
+            korisnici korisnik = new korisnici();
+            korisnik.ime = ime;
+            korisnik.prezime = prezime;
+            korisnik.jmbg = jmbg;
+            korisnik.brojTelefona = brTelefona;
+            korisnik.adresa = adresa;
+            korisnik.username = username;
+            korisnik.password = password;
+            korisnik.uposlen = uposlen;
 
             try
             {
@@ -305,6 +334,6 @@ namespace StudentskaBanka.AzureDatabase
             }
         }
 
-        */
+        
     }
 }

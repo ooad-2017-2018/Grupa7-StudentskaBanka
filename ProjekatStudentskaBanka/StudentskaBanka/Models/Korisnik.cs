@@ -42,5 +42,18 @@ namespace StudentskaBanka.Models
             Uposlen = uposlen;
             Racun = new Racun();
         }
+
+        public Korisnik(string ime, string prezime, string jmbg, string brTelefona, string adresa, string username, string password, bool uposlen, Racun racun)
+        {
+            Ime = ime;
+            Prezime = prezime;
+            Jmbg = jmbg;
+            BrTelefona = brTelefona;
+            Adresa = adresa;
+            Username = username;
+            Password = password;
+            Uposlen = uposlen;
+            Racun = racun;
+        }
     }
 }

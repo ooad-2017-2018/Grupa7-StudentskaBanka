@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace StudentskaBanka.ViewModels
 {
@@ -31,21 +32,21 @@ namespace StudentskaBanka.ViewModels
         {
             ns = ns;
             //kad tek udje na novaTransakcija mora biti selektovano prebaci sa racuna na racun
-            IzvrsiTransakciju = new RelayCommand<object>(izvrsiTransakciju, moguceIzvrsitiTransakciju);
+            IzvrsiTransakciju = new RelayCommand<object>(izvrsiTransakciju);
             Nazad = new RelayCommand<object>(zatvoriNovaTransakcijaView, returnTrue);
         }
 
         #region IzvrsiTransakciju
-        public void izvrsiTransakciju(object o)
+        public async void izvrsiTransakciju(object o)
         {
-            Baza.izvrsiTransakciju(posiljalac, primalac, iznos);
-        }
+            if(await (Baza.moguceIzvrsitiTransakciju(posiljalac, primalac, iznos)) == false)
+            {
+                MessageDialog poruka = new MessageDialog("Transakciju nije moguće izvršiti. Porvjerite unesene podatke!");
+                await poruka.ShowAsync();
+                return;
+            }
 
-        public bool moguceIzvrsitiTransakciju(object o)
-        {
-            //ako je string, ako nije int vracaj false - ove
-            //provjeriti i posiljaoca i primaoca i iznos
-            return Baza.moguceIzvrsitiTransakciju(posiljalac, primalac, iznos);
+            Baza.izvrsiTransakciju(posiljalac, primalac, iznos);
         }
         #endregion IzvrsiTransakciju
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentskaBanka
 {
-    class korisnici
+    public class korisnici
     {
         public int ID { get; set; }
         public string ime { get; set; }

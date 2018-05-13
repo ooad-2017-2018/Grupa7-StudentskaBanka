@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace StudentskaBanka.ViewModels
 {
@@ -27,19 +28,20 @@ namespace StudentskaBanka.ViewModels
         public PonistavanjeTransakcijeViewModel(NavigationService ns)
         {
             Ns = ns;
-            PonistiTransakciju = new RelayCommand<object>(ponistiTransakciju, mogucePonistitiTransakciju);
+            PonistiTransakciju = new RelayCommand<object>(ponistiTransakciju);
             Nazad = new RelayCommand<object>(zatvoriPonistavanjeTransakcije, returnTrue);
         }
 
         #region PonistiTransakciju
-        public void ponistiTransakciju(object o)
+        public async void ponistiTransakciju(object o)
         {
+            if(await (Baza.mogucePonistitiTransakciju(idTransakcije)) == false)
+            {
+                MessageDialog poruka = new MessageDialog("Nije moguće poništiti transakciju!");
+                await poruka.ShowAsync();
+                return;
+            }
             Baza.ponistiTransakciju(idTransakcije);
-        }
-
-        public bool mogucePonistitiTransakciju(object o)
-        {
-            return Baza.mogucePonistitiTransakciju(idTransakcije);
         }
         #endregion PonistiTransakciju
 

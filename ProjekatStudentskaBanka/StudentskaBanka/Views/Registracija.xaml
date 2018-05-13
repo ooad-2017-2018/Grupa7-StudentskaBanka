@@ -53,12 +53,12 @@
             </Grid>
 
             <StackPanel Orientation="Horizontal" Height="Auto" Margin="10,10,0,0">
-                <TextBlock Name="Provjera" Text="Provjerite sve podatke i cekirajte kvadratic" Margin="0,0,20,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                <TextBlock Name="Provjera" Text="Provjerite sve podatke i checkirajte kvadratić" Margin="0,0,20,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
                 <CheckBox Name="Cheker" IsChecked="{Binding KvadraticCekiran}" VerticalAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Height="Auto" Margin="10,10,0,0">
-                <TextBlock Name="Uposlenik" Text="Uposlenik?_" Margin="0,0,30,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                <TextBlock Name="Uposlenik" Text="Uposlenik?" Margin="0,0,30,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
                 <CheckBox Name="UposlenikChecker" IsChecked="{Binding Uposlenik}" VerticalAlignment="Center"/>
             </StackPanel>
 

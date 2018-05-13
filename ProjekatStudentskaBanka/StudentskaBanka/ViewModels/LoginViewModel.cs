@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Text.RegularExpressions;
+using System.IO;
+using Windows.UI.Popups;
 
 namespace StudentskaBanka.ViewModels
 {
@@ -37,21 +40,24 @@ namespace StudentskaBanka.ViewModels
 
         public LoginViewModel(NavigationService navigationService)
         {
-            PrijaviSe = new RelayCommand<object>(otvoriProfilKlijentaView, postojiLiKorisnik);
+            PrijaviSe = new RelayCommand<object>(otvoriProfilKlijentaView);
             Nazad = new RelayCommand<object>(zatvoriLoginViewModel, returnTrue);
             Ns = navigationService;
         }
         
         #region PrijaviSe
-        public void otvoriProfilKlijentaView(object o)
+        public async void otvoriProfilKlijentaView(object o)
         {
-            ns.Navigate(typeof(ProfilKlijenta), new ObjectKorisnikNavigationService(ns, Baza.dajKorisnika(username, password)));
+            if(await (Baza.postojiLiUsernamePassword(username, password)) == false)
+            {
+                MessageDialog poruka = new MessageDialog("Pogrešni pristupni podaci!");
+                await poruka.ShowAsync();
+                return;
+            }
+
+            ns.Navigate(typeof(ProfilKlijenta), new ObjectKorisnikNavigationService(ns, await Baza.dajKorisnika(username, password)));
         }
 
-        public bool postojiLiKorisnik(object o)
-        {
-            return Baza.postojiLiUsernamePassword(username, password);
-        }
         #endregion PrijaviSe
 
         #region Nazad

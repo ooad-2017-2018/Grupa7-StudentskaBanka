@@ -46,7 +46,7 @@ namespace StudentskaBanka.ViewModels
         #region Registruj
         public void registrujKorisnika(object o)
         {
-            Baza.registrujKorisnika(ime, prezime, jmbg, adresa, brojTelefona, email, sifra, uposlenik);
+            Baza.dodajKorisnika(ime, prezime, jmbg, adresa, brojTelefona, email, sifra, uposlenik);
         }
         public bool moguceRegistrovatiKorisnika(object o)
         {

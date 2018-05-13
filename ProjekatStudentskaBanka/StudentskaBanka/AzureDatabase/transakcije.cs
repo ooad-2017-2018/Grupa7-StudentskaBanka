@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentskaBanka.AzureDatabase
 {
-    class transakcije
+    public class transakcije
     {
         public int ID { get; set; }
         public int primalac_id { get; set; }
