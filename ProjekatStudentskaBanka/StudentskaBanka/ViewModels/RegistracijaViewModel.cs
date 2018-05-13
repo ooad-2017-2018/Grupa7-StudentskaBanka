@@ -47,20 +47,26 @@ namespace StudentskaBanka.ViewModels
         #region Registruj
         public async void registrujKorisnika(object o)
         {
+            MessageDialog poruka;
+            //milion validacija odradit na fazon da li je popunjeno, ovo ono...
+            if (kvadraticCekiran == false)
+            {
+                poruka = new MessageDialog("Kvadratic mora biti cekiran!");
+                await poruka.ShowAsync();
+                return;
+            }
+            else if (!sifra.Equals(PonoviteSifru))
+            {
+                poruka = new MessageDialog("Sifre moraju biti jednake!");
+                await poruka.ShowAsync();
+                return;
+            }
+
             Baza.dodajKorisnika(ime, prezime, jmbg, adresa, brojTelefona, email, sifra, uposlenik);
-            MessageDialog poruka = new MessageDialog("Uspješno ste obavili registraciju!");
+            poruka = new MessageDialog("Uspješno ste obavili registraciju!");
             await poruka.ShowAsync();
             return;
         }
-       /* public bool moguceRegistrovatiKorisnika(object o)
-        {
-            //milion validacija odradit na fazon da li je popunjeno, ovo ono...
-            if (kvadraticCekiran == false)
-                return false;
-            else if (!sifra.Equals(PonoviteSifru))
-                return false;
-            return true;
-        }*/
         #endregion Registruj
         
         #region Nazad

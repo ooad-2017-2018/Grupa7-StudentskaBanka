@@ -22,8 +22,6 @@ namespace StudentskaBanka.ViewModels
         public ICommand PrijaviSe { get; set; }
         public ICommand Nazad { get; set; }
 
-        //Ovo bi trebalo da osigura kada se promijeni tekst u tekstboxu da se promijeni text i ovdje(username i password)
-        //Nigdje nisam nista bindao jos uvijek, treba vidjeti kako to ide
         public string Username
         {
             get { return username; }

@@ -30,7 +30,7 @@ namespace StudentskaBanka.ViewModels
         
         public NovaTransakcijaViewModel(NavigationService ns)
         {
-            ns = ns;
+            Ns = ns;
             //kad tek udje na novaTransakcija mora biti selektovano prebaci sa racuna na racun
             IzvrsiTransakciju = new RelayCommand<object>(izvrsiTransakciju);
             Nazad = new RelayCommand<object>(zatvoriNovaTransakcijaView, returnTrue);
@@ -39,14 +39,16 @@ namespace StudentskaBanka.ViewModels
         #region IzvrsiTransakciju
         public async void izvrsiTransakciju(object o)
         {
-            if(await (Baza.moguceIzvrsitiTransakciju(posiljalac, primalac, iznos)) == false)
+            MessageDialog poruka;
+            if (await (Baza.moguceIzvrsitiTransakciju(posiljalac, primalac, iznos)) == false)
             {
-                MessageDialog poruka = new MessageDialog("Transakciju nije moguće izvršiti. Porvjerite unesene podatke!");
+                poruka = new MessageDialog("Transakciju nije moguće izvršiti. Porvjerite unesene podatke!");
                 await poruka.ShowAsync();
                 return;
             }
 
             Baza.izvrsiTransakciju(posiljalac, primalac, iznos);
+            poruka = new MessageDialog("Transakcija uspjesno izvrsena!");
         }
         #endregion IzvrsiTransakciju
 

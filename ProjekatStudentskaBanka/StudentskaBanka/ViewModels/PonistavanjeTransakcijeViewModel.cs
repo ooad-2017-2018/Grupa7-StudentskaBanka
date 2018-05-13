@@ -35,13 +35,16 @@ namespace StudentskaBanka.ViewModels
         #region PonistiTransakciju
         public async void ponistiTransakciju(object o)
         {
-            if(await (Baza.mogucePonistitiTransakciju(idTransakcije)) == false)
+            MessageDialog poruka;
+            if (await (Baza.mogucePonistitiTransakciju(idTransakcije)) == false)
             {
-                MessageDialog poruka = new MessageDialog("Nije moguće poništiti transakciju!");
+                poruka = new MessageDialog("Nije moguće poništiti transakciju!");
                 await poruka.ShowAsync();
                 return;
             }
             Baza.ponistiTransakciju(idTransakcije);
+            poruka = new MessageDialog("Transakcija uspjesno ponistena!");
+            return;
         }
         #endregion PonistiTransakciju
 

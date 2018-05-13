@@ -40,11 +40,10 @@ namespace StudentskaBanka.ViewModels
         }
         #endregion RegistrujSe
 
+        //Konvertor nije sredjen
         #region OtvoriKonvertor
         public void otvoriKonvertorValutaView(object o)
         {
-            //strana 25 na kerimovom dodatku pise ovo ispod : (treba vidjeti kakav parent treba, sta, zasto)
-            //prebacuje na sljedeci view i proslijedjuje viewmodel za taj view, koji ima ovaj view (this) kao Parent
             NavigationService.Navigate(typeof(KonvertorValuta));
         }
         #endregion OtvoriKonvertor

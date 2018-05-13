@@ -40,8 +40,6 @@ namespace StudentskaBanka.ViewModels
 
         public void novaTransakciju(object o)
         {
-            //ne prepoznaje mi NovaTransakcija.xaml iz nekog razloga, zasto ?
-            //Trebalo bi da oboji NovaTransakcija zelenom.
             Ns.Navigate(typeof(NovaTransakcija), ns);
         }
 
