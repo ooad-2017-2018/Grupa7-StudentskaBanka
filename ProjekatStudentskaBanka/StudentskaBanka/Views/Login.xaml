@@ -63,7 +63,7 @@
             TextWrapping="Wrap" 
             Height="50" 
             Background="White" FontSize="10"
-            Text="{Binding LoginViewModel.Username, UpdateSourceTrigger=PropertyChanged}"/>
+            Text="{Binding LoginViewModel.Username, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
         <TextBlock
             x:Name="textBlockSifra"
@@ -86,7 +86,7 @@
             TextWrapping="Wrap" 
             Height="50" 
             InputScope="Password"
-            Text="{Binding LoginViewModel.Password, UpdateSourceTrigger=PropertyChanged}"/>
+            Text="{Binding LoginViewModel.Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         
         <Button
             x:Name="buttonLogin"

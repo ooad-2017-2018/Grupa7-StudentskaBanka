@@ -62,9 +62,9 @@
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top" 
                    FontFamily="Segoe UI"
-                   Text=""
                    FontSize="20" 
                    Foreground="White"
+                   Text="{Binding ProfilKlijentaViewModel.K.Ime, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
             />
 
                 <TextBlock x:Name="textBlockPrezime" 
@@ -86,9 +86,9 @@
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top" 
                    FontFamily="Segoe UI"
-                   Text=""
                    FontSize="20" 
                    Foreground="White"
+                   Text="{Binding ProfilKlijentaViewModel.K.Prezime, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
                    />
 
                 <TextBlock x:Name="textBlockJMBG" 
@@ -109,10 +109,10 @@
                    Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
-                   Text=""
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
+                   Text="{Binding ProfilKlijentaViewModel.K.Jmbg, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
             />
 
                 <TextBlock x:Name="textBlockAdresa"
@@ -133,10 +133,10 @@
                    Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
-                   Text=""
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
+                           Text="{Binding ProfilKlijentaViewModel.K.Adresa, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
             />
 
                 <TextBlock x:Name="textBlockBrTel" 
@@ -183,10 +183,10 @@
                    Margin="0,10,0,0" 
                    TextWrapping="Wrap" 
                    VerticalAlignment="Top"
-                   Text=""
                    FontFamily="Segoe UI" 
                    FontSize="20" 
                    Foreground="White"
+                   Text="{Binding ProfilKlijentaViewModel.K.Email, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
                    />
 
             </Grid>
@@ -207,10 +207,10 @@
                     TextWrapping="Wrap" 
                     VerticalAlignment="Center"
                     MinWidth="100"
-                    Text=""
                     FontFamily="Segoe UI" 
                     FontSize="23" 
                     Foreground="White"
+                    Text="{Binding ProfilKlijentaViewModel.K.Racun.Stanje, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
             />
             </StackPanel>
 
