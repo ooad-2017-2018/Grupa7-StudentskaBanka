@@ -28,38 +28,38 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Name="Ime" Text="Ime" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="ImeUpis" Text="{Binding RegistracijaViewModel.Ime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="ImeUpis" Text="{Binding Ime, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
 
                 <TextBlock Name="Prezime" Text="Prezime" Grid.Row="1" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="PrezimeUpis" Text="{Binding RegistracijaViewModel.Prezime, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="200" Grid.Row="1" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="PrezimeUpis" Text="{Binding Prezime, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="200" Grid.Row="1" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
 
                 <TextBlock Name="JMBG" Text="JMBG" Grid.Row="2" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="JMBGUpis" Text="{Binding RegistracijaViewModel.Jmbg, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="2" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="JMBGUpis" Text="{Binding Jmbg, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="2" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
 
                 <TextBlock Name="Adresa" Text="Adresa" Grid.Row="3" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="AdresaUpis" Text="{Binding RegistracijaViewModel.Adresa, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="200" Grid.Row="3" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="AdresaUpis" Text="{Binding Adresa, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="200" Grid.Row="3" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
 
                 <TextBlock Name="BrojTel" Text="Broj Telefona" Grid.Row="4" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="BrojTelUpis" Text="{Binding RegistracijaViewModel.BrojTelefona, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="4" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="BrojTelUpis" Text="{Binding BrojTelefona, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="4" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
 
                 <TextBlock Name="Email" Text="Email" Grid.Row="5" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="EmailUpis" Text="{Binding RegistracijaViewModel.Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="5" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="EmailUpis" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="5" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
 
                 <TextBlock Name="Sifra" Text="Sifra" Grid.Row="6" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="SifraUpis" Text="{Binding RegistracijaViewModel.Sifra, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="200" Grid.Row="6" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="SifraUpis" Text="{Binding Sifra, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="200" Grid.Row="6" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
 
                 <TextBlock Name="SifraProvjera" Text="Ponovite sifru" Grid.Row="7" Margin="0,10,10,10" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBox Name="SifraProvUpis" Text="{Binding RegistracijaViewModel.PonoviteSifru, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="7" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
+                <TextBox Name="SifraProvUpis" Text="{Binding PonoviteSifru, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" MinWidth="200" Grid.Row="7" Grid.Column="1" Margin="0,10,0,10" VerticalAlignment="Center" Background="White"></TextBox>
             </Grid>
 
             <StackPanel Orientation="Horizontal" Height="Auto" Margin="10,10,0,0">
                 <TextBlock Name="Provjera" Text="Provjerite sve podatke i checkirajte kvadratić" Margin="0,0,20,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <CheckBox Name="Cheker" IsChecked="{Binding KvadraticCekiran}" VerticalAlignment="Center"/>
+                <CheckBox Name="Cheker" IsChecked="{Binding KvadraticCekiran, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Height="Auto" Margin="10,10,0,0">
                 <TextBlock Name="Uposlenik" Text="Uposlenik?" Margin="0,0,30,0" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <CheckBox Name="UposlenikChecker" IsChecked="{Binding Uposlenik}" VerticalAlignment="Center"/>
+                <CheckBox Name="UposlenikChecker" IsChecked="{Binding Uposlenik, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/>
             </StackPanel>
 
 

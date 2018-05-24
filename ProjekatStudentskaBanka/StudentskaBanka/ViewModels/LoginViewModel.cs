@@ -46,6 +46,7 @@ namespace StudentskaBanka.ViewModels
         #region PrijaviSe
         public async void otvoriProfilKlijentaView(object o)
         {
+            /*Baca Json-a, ako ne znate, pitacemo Kerima */
             if(await (Baza.postojiLiUsernamePassword(username, password)) == false)
             {
                 MessageDialog poruka = new MessageDialog("Pogrešni pristupni podaci!");

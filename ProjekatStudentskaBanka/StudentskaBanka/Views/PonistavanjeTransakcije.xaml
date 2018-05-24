@@ -46,7 +46,7 @@
         <Button x:Name="button_ponisti" Command ="{Binding PonistiTransakciju}" Grid.Row="1" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Poništi transakciju" VerticalAlignment="Top" Margin="10,174,10,0" Height="55" HorizontalAlignment="Stretch" />
         <Button x:Name="button_nazad" Command ="{Binding Nazad}" Grid.Row="1" Background="LightGoldenrodYellow" Foreground="Blue" FontSize="23" Content="Nazad" VerticalAlignment="Top" Margin="10,235,10,0" Height="55" HorizontalAlignment="Stretch" />
 
-        <TextBox HorizontalAlignment="Left" Text="{Binding PonistavanjeTransakcijeViewModel.IdTransakcije, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="White" Margin="20,79.6,0,0" Grid.Row="1" TextWrapping="Wrap" PlaceholderText="Broj transakcije" VerticalAlignment="Top" Width="989">
+        <TextBox HorizontalAlignment="Left" Text="{Binding IdTransakcije, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="White" Margin="20,79.6,0,0" Grid.Row="1" TextWrapping="Wrap" PlaceholderText="Broj transakcije" VerticalAlignment="Top" Width="989">
             <!--<TextBox.FocusVisualSecondaryBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

@@ -27,15 +27,13 @@ namespace StudentskaBanka.ViewModels
         public string BrojTelefona { get => brojTelefona; set { brojTelefona = value; OnPropertyChanged("BrojTelefona"); } }
         public string Email { get => email; set { email = value; OnPropertyChanged("Email"); } }
         public string Sifra { get => sifra; set { sifra = value; OnPropertyChanged("Sifra"); } }
-        public string PonoviteSifru { get => ponoviteSifru; set { PonoviteSifru = value; OnPropertyChanged("PonoviteSifru"); } }
-        public bool KvadraticCekiran { get => kvadraticCekiran; set { kvadraticCekiran = value; OnPropertyChanged("KvadraticCekiran"); } }
-        public bool Uposlenik { get => uposlenik; set { uposlenik = value; OnPropertyChanged("Uposlenik");} }
+        public string PonoviteSifru { get => ponoviteSifru; set { ponoviteSifru = value; OnPropertyChanged("PonoviteSifru"); } }
+        public bool KvadraticCekiran { get { if (kvadraticCekiran) return true; return false; } set { kvadraticCekiran = value; OnPropertyChanged("KvadraticCekiran"); } }
+        public bool Uposlenik { get { if (uposlenik) return true; return false; } set { uposlenik = value; OnPropertyChanged("Uposlenik");} }
         public NavigationService Ns { get => ns; set => ns = value; }
 
 
-
-        //KAKO ZNATI KOJI JE SELEKTOVAN KVADRATIC KOJI NIJE I JE LI SELEKTOVAN UOPSTE
-
+       
         public RegistracijaViewModel(NavigationService ns)
         {
             Ns = ns;
@@ -48,10 +46,16 @@ namespace StudentskaBanka.ViewModels
         public async void registrujKorisnika(object o)
         {
             MessageDialog poruka;
-            //milion validacija odradit na fazon da li je popunjeno, ovo ono...
-            if (kvadraticCekiran == false)
+
+            if (ime == null || prezime == null || jmbg == null || adresa == null || brojTelefona == null || email == null || sifra == null)
             {
-                poruka = new MessageDialog("Kvadratic mora biti cekiran!");
+                poruka = new MessageDialog("Molimo vas da popunite sve podatke!");
+                await poruka.ShowAsync();
+                return;
+            }
+            else if (!kvadraticCekiran)
+            {
+                poruka = new MessageDialog("Molimo vas da cekirate kvadratic!");
                 await poruka.ShowAsync();
                 return;
             }
@@ -62,7 +66,7 @@ namespace StudentskaBanka.ViewModels
                 return;
             }
 
-            Baza.dodajKorisnika(ime, prezime, jmbg, adresa, brojTelefona, email, sifra, uposlenik);
+            Baza.dodajKorisnika(ime, prezime, jmbg, brojTelefona, adresa, email, sifra, uposlenik);
             poruka = new MessageDialog("Uspješno ste obavili registraciju!");
             await poruka.ShowAsync();
             return;
