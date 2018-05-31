@@ -1,0 +1,14 @@
+
+1) SINGLETON
+
+- Singleton pattern koristimo za klase koje zelimo instancirati samo jedanput. Cesto se koristi za objekte koji rade sa thread
+pool-ovima, drajverima. Lazy singleton: objekat se instancira tek pri prvom korištenju objekta.
+Postize se na nacin da se doda static privatni konstruktor, da ima privatnu staticku instancu iste te klase,
+metodu getInstance() koja vraca tu instancu, te privatni konstruktor bez parametara tako da se instanca moze kreirati samo ovom klasom.
+Ovaj patern nije iskoristen, mogli bi ga iskoristiti da se kreira samo jedna instanca klase Baza, koja radi sa bazom.
+
+2) STRATEGY 
+- Strategy pattern koristimo da izdvojimo razlicite algoritme (rjesenja/strategije) i stavimo ih u posebne klase. Koristi se kada
+imamo vise algoritama za jedan problem. Koristimo ga tako da napravimo interface koji definise neku obaveznu metodu, 
+zatim implementiramo za sve algoritme po klasu koja implementira taj interface. Ovaj patern nije iskoristen, mogao bi se 
+iskoristiti ako npr. zelimo heshirati sifre/lozinke korisnika, za koje postoje razliciti hashevi.
