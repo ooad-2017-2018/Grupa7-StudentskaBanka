@@ -19,3 +19,16 @@ koja specificira cistu virtualnu clone() metodu. Svaka klasa kojoj je potreban p
 4) Observer patern: ako je potrebno uspostaviti relaciju izmeðu objekata tako da kada se stanje jednog objekta promijeni vezani 
 objekti dobiju obavijest. Implementiramo tako sto uvedemo Subject i Observer klasu, te IObserver interface (on sadrzi samo metodu Update koja koja se poziva nakon promjene stanja neke Subject instance). Subject klasa sadrži privatni dogaðaj Notify, koji predstavlja Event mehanizam za pozivanje Update metode za sve posmatrace. Patern bi se mogao iskoristiti da bi se npr. promijenilo novcano stanje korisnika kada se ono promijeni kroz transakciju iniciranu od drugog korisnika.
 
+5)
+Iterator pattern se koristi kada ћelimo uniformno pristupati bilo kojoj kolekciji bez poznavanja njene strukture.
+On takodjer omogucava bolji polimorfizam i skracivanje koda. .NET Framework koristi specijalne interfejse koji podrћavaju jednostavnu 
+iteraciju, System.Collections.IEnumerator i System.Collections.Generic.IEnumerator<T>. foreach petlja je dizajnirana tako da se 
+jednostavno iterira kroz kolekcije koje podrzavaju ove interfejse. Ovaj patern nije iskoriљten u nasem projektu, zbog nepostojanja 
+nekih posebnih/custom koleckija nema potrebe za njim, a za jednostavne primjene nam .NET pruza podrsku.
+
+6) 
+Proxy pattern odvaja interfejs od implementacije. On omoguжava pristup i kontrolu pristupa stvarnim objektima. Moћe se koristiti i za 
+klase koje imaju spore operacije ili osjetljive podatke.  Koristi se objekat posrednik, on prihvata i donosi odluke kod zahtjeva 
+za pristup stvarnom objektu. Nije jos koriљten u nasoj aplikaciji, moћe se koristiti kod dodjeljivanja privilegija korisnicima, buduci da 
+i administrator i uposlenici mogu vidjeti sve korisnike, ali samo administrator moћe dodjeljivati privilegije.
+
