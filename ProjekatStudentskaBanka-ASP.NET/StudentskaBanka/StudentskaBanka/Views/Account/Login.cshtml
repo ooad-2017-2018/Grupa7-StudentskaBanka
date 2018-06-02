@@ -4,6 +4,120 @@
     ViewBag.Title = "Log in";
 }
 
+
+<style>
+    body {
+        background-color: black;
+        background-image: url(https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c3583c9e0a39944ac510280a55bcc0b&auto=format&fit=crop&w=1500&q=80);
+        background-size: 1400px 1000px;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: 'DejaVu Sans';
+    }
+
+    h7 {
+        color: lightblue;
+        font-size: 25px;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        position: relative;
+        margin-left: 25%;
+    }
+
+    .sifra {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .email {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .zapamti {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .login {
+        background-color: lightblue;
+        color: black;
+        font-family: 'DejaVu Sans';
+        font-weight: bold;
+        width: 300px;
+        padding: 4px 40px;
+    }
+
+    .k {
+        margin-left: 25%;
+    }
+
+    .pomjeri {
+        margin-left: 40%;
+    }
+
+    .zab {
+        margin-left: 12%;
+    }
+
+    .m {
+        width: 300px;
+    }
+    h1{
+        font-family:'DejaVu Sans';
+        color:lightblue;
+    }
+</style>
+
+<h1>Prijava</h1>
+<header>
+
+    <hr />
+</header>
+
+<<body>
+    <div class="container log">
+        <div class="row">
+            <div class="col-sm-8">
+                <form class="form pomjeri">
+                    <div class="imgcontainer">
+                        <img src="~/Slike/vector-login.jpg" alt="Slika" class="img-rounded" height="300" width="300">
+                    </div>
+
+                    <div class="container k">
+
+                        <h7>Unesite tražene podatke: </h7>
+                        <div class="form-group">
+                            <label class="label email" emailfor="email">Username ili email:</label>
+                            <input type="email" class="form-control m" id="email" placeholder="Unesite email">
+                        </div>
+                        <div class="form-group">
+                            <label class="label sifra" for="pwd">Password:</label>
+                            <input type="password" class="form-control p" id="pwd" placeholder="Unesite šifru">
+                            <span class="psw zab"> <a href="#">Zaboravili ste šifru?</a></span>
+                        </div>
+                        <div class="checkbox">
+                            <label class="label zapamti"><input type="checkbox"> Zapamti podatke </label>
+
+                        </div>
+                        <button type="submit" class="button login">Log In</button>
+
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<!--
 <h2>@ViewBag.Title.</h2>
 <div class="row">
     <div class="col-md-8">
@@ -61,3 +175,5 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+    ->>

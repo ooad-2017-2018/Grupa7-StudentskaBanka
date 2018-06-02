@@ -3,8 +3,147 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<style>
+    body {
+        background-image: url(https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c3583c9e0a39944ac510280a55bcc0b&auto=format&fit=crop&w=1500&q=80);
+        background-size: 1400px 1000px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
+    h1 {
+        font-family:'DejaVu Sans';
+        color: lightblue;
+    }
+
+    .sifra {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .email {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .ime {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .prezime {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .adresa {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .maticni{
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .brojTel {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .login {
+        background-color: lightblue;
+        color: black;
+        font-weight: bold;
+        font-family:'DejaVu Sans';
+        font-size:20px;
+        text-align: center;
+        padding: 3px 50px;
+        margin-left: 20%;
+        margin-top: 2%;
+    }
+
+    .forma {
+        margin-left: 20%;
+    }
+
+    .tekst {
+        margin-top: 2%;
+        margin-left: 13%;
+    }
+
+
+</style>
+
+<h1>Registracija</h1>
+<header>
+
+    <hr />
+</header>
+<form class="form forma">
+
+    <div class="row">
+        <div class="col-sm-4">
+
+            <div class="form-group">
+                <label class="label ime">Ime:</label>
+                <input type="text" class="form-control" id="name" placeholder="Unesite ime">
+            </div>
+
+            <div class="form-group">
+                <label class="label prezime">Prezime:</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Unesite prezime">
+            </div>
+
+            <div class="form-group">
+                <label class="label maticni">Matični broj:</label>
+                <input type="text" class="form-control" id="id" placeholder="Unesite mat. broj">
+            </div>
+
+            <div class="form-group">
+                <label class="label adresa">Adresa:</label>
+                <input type="text" class="form-control" id="adress" placeholder="Unesite adresu">
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label class="label brojTel">Broj telefona:</label>
+                <input type="text" class="form-control" id="phone" placeholder="Unesite broj telefona">
+            </div>
+
+            <div class="form-group">
+                <label class="label email" emailfor="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Unesite email">
+            </div>
+
+            <div class="form-group">
+
+                <label class="label sifra" for="pwd">Šifra:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Unesite šifru">
+            </div>
+
+            <div class="form-group">
+                <label class="label sifra" for="pwd">Ponovo unesite šifru:</label>
+                <input type="password" class="form-control" id="pwd1" placeholder="Unesite šifru">
+            </div>
+
+        </div>
+
+    </div>
+    <button type="submit" class="button login">Registruj se</button>
+    <p class="tekst" style="color:lightblue">Registracijom prihvatate naše uslove korištenja. <a href="#" style="color:white"><u>Uslovi korištenja</u></a></p>
+
+</form>
+
+<!--
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
@@ -39,3 +178,5 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+->>
