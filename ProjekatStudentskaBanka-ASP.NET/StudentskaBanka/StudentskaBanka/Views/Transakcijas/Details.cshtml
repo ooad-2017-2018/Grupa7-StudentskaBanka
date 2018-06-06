@@ -1,0 +1,50 @@
+﻿@model StudentskaBanka.Models.Transakcija
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transakcija</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.posiljalacId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.posiljalacId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.primalacId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.primalacId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vrijeme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vrijeme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iznos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iznos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

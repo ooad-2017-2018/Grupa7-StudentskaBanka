@@ -8,13 +8,19 @@ namespace StudentskaBanka.Models
 {
     public class Transakcija
     {
+        [ScaffoldColumn(false)]
         public int ID { get; set; }
+
         public int posiljalacId { get; set; }
+
+        [Required]
         public int primalacId { get; set; }
         public DateTime vrijeme { get; set; }
+
         [Range(20,500, ErrorMessage = "Iznos transakcije ne može biti manji od 20 ili veći od 500")]
         public int iznos { get; set; }
 
+        public Transakcija() { }
 
         public Transakcija(int ID, int posiljalacId, int primalacId, DateTime vrijeme, int iznos)
         {

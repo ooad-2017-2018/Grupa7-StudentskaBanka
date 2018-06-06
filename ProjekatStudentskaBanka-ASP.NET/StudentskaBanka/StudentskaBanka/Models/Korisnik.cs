@@ -21,16 +21,24 @@ namespace StudentskaBanka.Models
 
         [Display(Name = "Matični broj")]
         public String jmbg { get; set; }
+
         [Display(Name = "Adresa")]
         public String adresa { get; set; }
+
         [Display(Name = "Broj telefona")]
         public String brTelefona { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public String mail { get; set; }
+
+        [Required]
         [Display(Name = "Password")]
         public String password { get; set; }
 
         public int racunId { get; set; }
+
+        public Korisnik() { }
 
         public Korisnik(int ID, string ime, string prezime, string jmbg, string adresa, string brTelefona, string mail, 
             string password, int racunId)

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<StudentskaBanka.Models.Transakcija>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.posiljalacId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primalacId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vrijeme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iznos)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.posiljalacId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primalacId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vrijeme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iznos)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
