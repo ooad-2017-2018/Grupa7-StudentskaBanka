@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentskaBanka.Models
 {
     public class Racun
     {
         public int ID { get; set; }
+        [Range(-500,10000, ErrorMessage = "Dug ne može biti veći od 500")]
         public int stanje { get; set; }
         public bool blokiran { get; set; }
 

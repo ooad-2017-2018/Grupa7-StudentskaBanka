@@ -10,7 +10,7 @@ namespace StudentskaBanka.Models
     public class BankaContext : DbContext
     {
         public BankaContext() : base("AzureConnection") //AzureConnection je naziv connection stringa u Web.config-u
-{
+        {
         }
 
         //dodavanjem klasa iz modela kao DbSet iste će biti mapirane u bazu podataka
