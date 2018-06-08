@@ -36,7 +36,7 @@
         Naša banka ima za cilj da organizuje, nadgleda, pomaže, upućuje i vodi računa o
         jednom studentu, konkretno njegovim finansijama i novcem kojim raspolaže. Uvjerite se sami. Niste registrovani?
     </p>
-    <p><a onclick="location.href='@Url.Action("Register","Account")'" class="btn btn-primary btn-lg">Registracija &raquo;</a></p>
+    <p><a onclick="window.location.href='@Url.Action("Create","Korisniks")'" class="btn btn-primary btn-lg">Registracija &raquo;</a></p>
 </div>
 
 <div class="row">
@@ -58,7 +58,7 @@
             Besplatno koristite funkcionalnost pretvaranja iznosa iz jedne valute u drugu. Trenutno dostupne valute su
             konvertibilna marka (BAM), euro i dolar.
         </p>
-        <p><a class="btn btn-primary btn-default" onclick="location.href='@Url.Action("About","Home")'">Konvertor &raquo;</a></p>
+        <p><a class="btn btn-primary btn-default" href="https://raiffeisenbank.ba/konvertor-valuta">Konvertor &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h3 style="color:azure">Kursna lista</h3>
@@ -74,7 +74,7 @@
             Besplatno se registrujte i sa dodjeljenim računom koristite niz funkcionalnosti koje banka pruža. Vršite transakcije,
             štedite novac i pratite nagrade i bonuse za najvrjednije studente.
         </p>
-        <p><a class="btn btn-primary btn-default" onclick="location.href='@Url.Action("About","Home")'">eBank &raquo;</a></p>
+        <p><a class="btn btn-primary btn-default" onclick="window.location.href='@Url.Action("Login","Account")'">eBank &raquo;</a></p>
     </div>
 
 </div>

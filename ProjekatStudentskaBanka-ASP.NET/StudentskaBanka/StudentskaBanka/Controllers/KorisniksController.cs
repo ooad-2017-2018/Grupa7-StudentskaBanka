@@ -21,13 +21,13 @@ namespace StudentskaBanka.Controllers
         }
 
         // GET: Korisniks/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            if (id == null)
+            if (Session["UserId"] == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Korisnik korisnik = db.Korisnik.Find(id);
+            Korisnik korisnik = db.Korisnik.Find(Session["UserId"]);
             if (korisnik == null)
             {
                 return HttpNotFound();

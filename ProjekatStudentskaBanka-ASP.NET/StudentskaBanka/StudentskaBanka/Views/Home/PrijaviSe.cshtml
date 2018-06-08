@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "PrijaviSe";
+}
+
+<style>
+    body {
+        background-color: black;
+        background-image: url(https://images.unsplash.com/photo-1500316124030-4cffa46f10f0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7c3583c9e0a39944ac510280a55bcc0b&auto=format&fit=crop&w=1500&q=80);
+        background-size: 1400px 1000px;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: 'DejaVu Sans';
+    }
+
+    h7 {
+        color: lightblue;
+        font-size: 25px;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        position: relative;
+        margin-left: 25%;
+    }
+
+    .sifra {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .email {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .zapamti {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+        font-size: 15px;
+    }
+
+    .login {
+        background-color: lightblue;
+        color: black;
+        font-family: 'DejaVu Sans';
+        font-weight: bold;
+        width: 300px;
+        padding: 4px 40px;
+    }
+
+    .k {
+        margin-left: 25%;
+    }
+
+    .pomjeri {
+        margin-left: 40%;
+    }
+
+    .zab {
+        margin-left: 12%;
+    }
+
+    .m {
+        width: 300px;
+    }
+
+    h1 {
+        font-family: 'DejaVu Sans';
+        color: lightblue;
+    }
+</style>
+
+<h1>Prijava</h1>
+<header>
+
+    <hr />
+</header>
+
+<<body>
+     <form method="post">
+         <input class="form-control" name="email" id="email" type="text" placeholder="Korisničko ime" />
+         <br />
+         <div id="pwGreska" style="font-size:small; color:lightgoldenrodyellow">
+             @Html.Label("", Convert.ToString((string)ViewBag.pwGreska))
+         </div>
+         <input class="form-control" name="pwd" id="pwd" type="password" placeholder="Password" />
+
+         <br /> <br />
+         <p><button type="submit" class="btn btn-primary btn-lg">Login &raquo;</button></p>
+     </form>
+
+</body>
+

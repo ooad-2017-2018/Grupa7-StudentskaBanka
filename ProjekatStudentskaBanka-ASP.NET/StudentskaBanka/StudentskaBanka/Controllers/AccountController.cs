@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using StudentskaBanka.Models;
+using System.Collections.Generic;
 
 namespace StudentskaBanka.Controllers
 {
@@ -54,10 +55,35 @@ namespace StudentskaBanka.Controllers
 
         //
         // GET: /Account/Login
-        [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        [HttpPost]
+        public ActionResult Login(string email, string pwd)
         {
-            ViewBag.ReturnUrl = returnUrl;
+            BankaContext db = new BankaContext();
+            List<Korisnik> listaKorisnika = new List<Korisnik>();
+            listaKorisnika = db.Korisnik.ToList();
+
+            for (int i = 0; i < listaKorisnika.Count; i++)
+            {
+                if (listaKorisnika[i].mail.Equals(email))
+                {
+
+                    if (pwd.Equals(listaKorisnika[i].password))
+                    {
+                        Session["User"] = listaKorisnika[i];
+                        Session["UserId"] = listaKorisnika[i].ID;
+                        return RedirectToAction("Index", "Korisniks");
+                    }
+                    else
+                    {
+                        //ModelState.AddModelError("Password", "Password ne valja!");
+                        ViewBag.passwordGreska = "Password nije validan!";
+                        return View();
+                    }
+
+                }
+            }
+
+            // return Content($"Niste registrovani {email} {pwd}");
             return View();
         }
 

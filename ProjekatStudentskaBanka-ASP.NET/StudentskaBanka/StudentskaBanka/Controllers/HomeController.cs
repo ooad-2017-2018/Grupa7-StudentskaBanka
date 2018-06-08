@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
+using StudentskaBanka.Models;
 
 namespace StudentskaBanka.Controllers
 {
@@ -30,9 +31,52 @@ namespace StudentskaBanka.Controllers
             return View();
         }
 
+        public ActionResult PrijaviSe()
+        {
+            return View();
+        }
+
+       
+        [HttpPost]
+        public ActionResult PrijaviSe(string email, string pwd)
+        {
+            
+            BankaContext db = new BankaContext();
+            //email = "malkocahmed@gmail.com";
+            //pwd = "password";
+            List<StudentskaBanka.Models.Korisnik> listaKorisnika = new List<Models.Korisnik>();
+            listaKorisnika = db.Korisnik.ToList();
+
+            for (int i = 0; i < listaKorisnika.Count; i++)
+            {
+                if (listaKorisnika[i].mail.Equals(email))
+                {
+                    //return RedirectToAction("Index", "Korisniks");
+
+                    if (pwd.Equals(listaKorisnika[i].password))
+                    {
+                        Session["User"] = listaKorisnika[i];
+                        Session["UserId"] = listaKorisnika[i].ID;
+                        return RedirectToAction("Details", "Korisniks");
+                    }
+                    else
+                    {
+                        ViewBag.pwGreska = "Password nije validan!";
+                        return View();
+                    }
+
+                }
+            }
+
+            return Content($"Niste registrovani {email} {pwd}");
+
+            //return View();
+
+        }
+
         public ActionResult MapaSpecificFunctionality()
         {
-            ViewBag.Message = "Vaza lokacija";
+            ViewBag.Message = "Vaša lokacija";
 
             return View();
         }
