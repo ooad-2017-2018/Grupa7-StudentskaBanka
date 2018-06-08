@@ -18,9 +18,8 @@ namespace StudentskaBanka.Models
 
         public Racun() { }
 
-        public Racun(int ID, int stanje, bool blokiran)
+        public Racun(int stanje, bool blokiran)
         {
-            this.ID = ID;
             this.stanje = stanje;
             this.blokiran = blokiran;
         }

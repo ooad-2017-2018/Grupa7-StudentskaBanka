@@ -66,17 +66,12 @@
             @Html.DisplayFor(model => model.password)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.racunId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.racunId)
-        </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Uredi profil", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Otvori račun", "Details", "Racuns") |
+    @Html.ActionLink("Nova transakcija", "Create", "Transakcijas"))
+
 </p>

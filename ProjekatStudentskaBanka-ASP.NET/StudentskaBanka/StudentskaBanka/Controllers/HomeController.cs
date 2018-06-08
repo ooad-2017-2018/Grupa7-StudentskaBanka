@@ -57,6 +57,7 @@ namespace StudentskaBanka.Controllers
                     {
                         Session["User"] = listaKorisnika[i];
                         Session["UserId"] = listaKorisnika[i].ID;
+                        Session["racunId"] = listaKorisnika[i].racunId;
                         return RedirectToAction("Details", "Korisniks");
                     }
                     else

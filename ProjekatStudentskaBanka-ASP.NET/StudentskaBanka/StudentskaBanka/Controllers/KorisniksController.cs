@@ -48,9 +48,12 @@ namespace StudentskaBanka.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,ime,prezime,jmbg,adresa,brTelefona,mail,password,racunId")] Korisnik korisnik)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Korisnik.Add(korisnik);
+                Racun racun = new Racun(0, false);
+                db.Racun.Add(racun);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

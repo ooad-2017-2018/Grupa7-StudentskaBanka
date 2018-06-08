@@ -21,13 +21,13 @@ namespace StudentskaBanka.Controllers
         }
 
         // GET: Racuns/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details()
         {
-            if (id == null)
+            if (Session["racunId"] == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Racun racun = db.Racun.Find(id);
+            Racun racun = db.Racun.Find(Session["racunId"]);
             if (racun == null)
             {
                 return HttpNotFound();
