@@ -194,8 +194,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KorisniksController.cs" />
+    <Compile Include="Controllers\KreditsController.cs" />
     <Compile Include="Controllers\Lokacija.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RacunsController.cs" />
     <Compile Include="Controllers\TransakcijasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,6 +284,16 @@
     <Content Include="Views\Transakcijas\Index.cshtml" />
     <Content Include="Views\Home\MapaSpecificFunctionality.cshtml" />
     <Content Include="Views\Home\PrijaviSe.cshtml" />
+    <Content Include="Views\Racuns\Create.cshtml" />
+    <Content Include="Views\Racuns\Delete.cshtml" />
+    <Content Include="Views\Racuns\Details.cshtml" />
+    <Content Include="Views\Racuns\Edit.cshtml" />
+    <Content Include="Views\Racuns\Index.cshtml" />
+    <Content Include="Views\Kredits\Create.cshtml" />
+    <Content Include="Views\Kredits\Delete.cshtml" />
+    <Content Include="Views\Kredits\Details.cshtml" />
+    <Content Include="Views\Kredits\Edit.cshtml" />
+    <Content Include="Views\Kredits\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
