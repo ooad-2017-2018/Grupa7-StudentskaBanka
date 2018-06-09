@@ -11,70 +11,8 @@ namespace StudentskaBanka.AzureDatabase
 {
     public class Baza
     {
-        //Ove funkcije su vec iskoristene u ViewModelima u kojima treba da su iskoristene
-        //One su vec pozvane samo se ceka njihova implementacija
-        //Njihovi prototipi se ne smiju mijenjati
-        //Njihove povratne vrijednosti se ne smiju mijenjati
-        //Funkcije koje si pravio mozes pozvati unutar ovih funkcija
-        //One funkcije koje si pravio, mozes nastimati da ih pozovu ove fje i da proslijede njihov rezultat
 
-       /* public static async Task<bool> postojiLiUsernamePassword(String username, String password)
-        {
-            bool rezultat = await postojiLiUsernamePassword1(username, password);
-            return rezultat;
-        }*/
-        /*
-        public static Korisnik dajKorisnika(String username, String password)
-        {
-            //pogledaj konstruktor ovog Korisnik()
-            Korisnik k = new Korisnik();
-            Racun r = new Racun();
-            //Kad nadjes korisnika nadji i njegov racun
-            k.Ime = "Popuni sve ove atribute kad ih dobijes iz baze al mi vrati korisnika.";
-            k.Racun = r;
-            return k;
-        }
-
-        public static bool moguceIzvrsitiTransakciju(int posiljalac, int primalac, float iznos)
-        {
-            //jako je bitno da je ovaj redoslijed :
-            //prvo provjeri da nije koji racun blokiran od ova 2   
-            //else -- postoje li navedeni korisnisi, OBAVEZNO
-            if (posiljalac == 1)
-                return true;
-            //ima li posiljalac dovoljno da posalje
-            return true; 
-        }
-
-        public static void izvrsiTransakciju(int posiljalac, int primalac, float iznos)
-        {
-            //napravi novu transakciju i smjesti je u bazu
-        }
-
-        public static bool mogucePonistitiTransakciju(int idTransakcije)
-        {
-            //ispitat
-            //postoji li uopste ta transakcija !!
-            //ako hoces jos kakvih uslova, ovo ono, 3 dana..
-            return true;
-        }
-
-        public static void ponistiTransakciju(int idTransakcije)
-        {
-            //iz transakcije izvuci posiljaoca i primaoca i 
-            //obrnuta logika
-            //sa racuna primaoca skidas
-            //na racun posiljaoca stavljas iznos
-            //NE BRISES TRANSAKCIJU IZ BAZE nego pravis novu i biljezis da je ovo uradjeno u nju
-        }
-
-        public static void registrujKorisnika(String ime, String prezime, String jmbg, String adresa, String brojTelefona, String email, String sifra, bool uposlenik)
-        {
-            //Samo ga potrpaj u bazu;
-        }*/
-        
-        
-        private static bool provjeriDatum(DateTime datum)
+        private static bool provjeriDaLiJeDatumStarijiOd3Dana(DateTime datum)
         {
             if ((DateTime.Now - datum).TotalDays > 3)
                 return false;
@@ -89,7 +27,7 @@ namespace StudentskaBanka.AzureDatabase
 
         public static async Task<bool> postojiLiUsernamePassword(String Username, String Password)
         {
-            //ako u bazi ne postoji ova kombinacija username-a i password-a, daj mi false
+            //ako u bazi ne postoji ova kombinacija username-a i password-a, vraca false
             IMobileServiceTable<korisnici> Korisnici = App.MobileService.GetTable<korisnici>();
 
             IEnumerable<korisnici> tabela = await Korisnici.ReadAsync();
@@ -229,7 +167,6 @@ namespace StudentskaBanka.AzureDatabase
                     }
             }
 
-            // gotovo
         }
 
         public static async void ponistiTransakciju(int idTransakcije)
@@ -238,8 +175,6 @@ namespace StudentskaBanka.AzureDatabase
             //sa racuna primaoca skinuti iznos (naravno da se moze ici u minus)
             //na racun posiljaoca staviti iznos
             
-
-            //bit ce uradjeno nakon odredjenih provjera
         }
 
         public static async Task<bool> mogucePonistitiTransakciju(int idTransakcije)
@@ -258,7 +193,7 @@ namespace StudentskaBanka.AzureDatabase
                 if (elementT.ID.Equals(idTransakcije))
 
                     //ako postoji provjeri se da li je starija od 3 dana, funkcija provjeriDatum je iznad u kodu
-                    if(provjeriDatum(elementT.vrijeme))
+                    if(provjeriDaLiJeDatumStarijiOd3Dana(elementT.vrijeme))
                     {
                         return true;
                         break;
